@@ -23,3 +23,14 @@ The dataset folder is ignored by Git and is not stored in this repository.
 Install required packages:
 
 pip install pandas networkx
+
+# Current work
+
+temporal_eda.py
+Runs temporal EDA on all subreddit JSON files and saves subreddit-level summaries.
+
+plot_temporal_results.py
+Loads precomputed summaries and generates temporal EDA figures.
+
+temporal_eda_summary_all_subreddits.csv
+Final subreddit-level temporal EDA results.
