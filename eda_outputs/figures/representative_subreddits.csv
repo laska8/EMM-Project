@@ -1,0 +1,11 @@
+subreddit,n,return_rate,mean_reciprocity,mean_replies_sent,adjusted_gap
+ExploreFiction,205,0.722,0.9499,3.8488,
+randomsuperpowers,260,0.7038,0.9052,10.9308,
+DWMA,317,0.7539,0.8665,11.429,
+HITsWorthTurkingFor,5164,0.3964,0.3763,4.2186,0.0207
+tampa,5167,0.3873,0.4554,2.7062,0.0878
+linux4noobs,5167,0.2452,0.5537,2.1239,0.0291
+AdviceAnimals,996617,0.4287,0.2999,3.2171,-0.0443
+pics,1152645,0.3756,0.2526,2.3927,-0.0594
+funny,1382467,0.4105,0.2455,2.754,-0.0522
+photoshopbattles,55911,0.1738,0.1957,1.5283,-0.0643

@@ -22,7 +22,7 @@ The dataset folder is ignored by Git and is not stored in this repository.
 
 Install required packages:
 
-pip install pandas networkx
+pip install pandas numpy matplotlib networkx pyarrow jinja2 pyfixest
 
 # Current work
 
@@ -34,3 +34,23 @@ Loads precomputed summaries and generates temporal EDA figures.
 
 temporal_eda_summary_all_subreddits.csv
 Final subreddit-level temporal EDA results.
+
+## reddit_eda
+
+reddit_eda.ipynb
+EDA notebook (user activity, return, community networks, reciprocity). Only loads datasets, prints summaries and plots.
+
+build_eda_datasets.py
+Builds all EDA datasets from the subreddit JSON files and saves them to eda_outputs/.
+
+reply_network_analyzer.py
+Computes activity, return, community and reciprocity features for one subreddit JSON file.
+
+eda_datasets.py
+Builds each dataset or loads it from eda_outputs/ if it already exists.
+
+eda_summaries.py
+Grouping and summary tables used in the notebook.
+
+eda_plots.py
+Plots used in the notebook. Paper figures are saved to eda_outputs/figures/.

@@ -1,1 +1,8 @@
 reply_networks/
+reply_networks/
+__pycache__/
+*.pyc
+
+# EDA datasets are rebuilt with reddit_eda/build_eda_datasets.py (several GB)
+eda_outputs/*.csv
+eda_outputs/*.part

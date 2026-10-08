@@ -1,0 +1,6 @@
+Variable,Mean,SD,Median,P99,Max,Skewness,% zero
+Out-degree (replies sent),3.411,8.936,1.0,35.0,2350.0,20.266,0.0
+In-degree (replies received),3.13,9.398,1.0,36.0,2173.0,17.851,31.993
+Distinct partners (in or out),5.102,13.39,2.0,53.0,2380.0,16.701,0.0
+Reciprocal partners,1.439,4.751,1.0,17.0,816.0,19.568,47.753
+Proportional reciprocity,0.361,0.405,0.214,1.0,1.0,0.573,47.753
