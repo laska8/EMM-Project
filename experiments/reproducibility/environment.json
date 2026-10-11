@@ -1,0 +1,13 @@
+{
+  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "analysis_executable": "C:\\Users\\tahai\\anaconda3\\python.exe",
+  "packages": {
+    "pyfixest": "0.60.0",
+    "pandas": "2.3.3",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "pyarrow": "16.1.0",
+    "matplotlib": "3.9.2"
+  }
+}

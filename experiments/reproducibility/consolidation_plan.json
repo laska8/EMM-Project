@@ -1,0 +1,1259 @@
+{
+  "root": "C:\\Users\\tahai\\Desktop\\EMM-Project",
+  "old_versions": {
+    "run_reciprocity_comparison": {
+      "signature": "b44ff196a0008fcaccc702f71d2d4274784d5d9358925eec9a4823e1a8c159cf",
+      "source_sha256": "05c3e207e91df75c593aca7cf0f5a8351b6330e3b800868221c175b9e30b8e3c"
+    },
+    "run_dependence_analysis": {
+      "signature": "d72ea3e535d8cfb899c2eeeec3e7caafcc7ce283bcfca56c508dc5d5b9460d43",
+      "source_sha256": "541449623b7f86a10d3ef3bd3e4e6d807212587629c7598c9820dea55e75b3bd"
+    },
+    "run_ame_analysis": {
+      "signature": "3ab5eaccf25aba1ee816acaddeae96e182048854fef176d1915eb08fdb01156e",
+      "source_sha256": "e35ae5ab871b0780db4557c2aae14fa23d0c9a230c2718fdcc800abc9186fd1a"
+    }
+  },
+  "files": [
+    {
+      "source": "beam_search/beam_search.py",
+      "archive": "M_reference_discovery/code/original/beam_search.py",
+      "sha256": "dbfcaaa078b1b51a405657c0b94936922a922737e10803964555e660e633c807",
+      "bytes": 4676,
+      "role": "original implementation snapshot",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\beam_search.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\code\\original\\beam_search.py",
+      "verified_keep_sha256": "dbfcaaa078b1b51a405657c0b94936922a922737e10803964555e660e633c807"
+    },
+    {
+      "source": "beam_search/emm_selectors.py",
+      "archive": "M_reference_discovery/code/original/emm_selectors.py",
+      "sha256": "231e7309554e2693ced0fe5427da52a06a64771605147ea4f42531bfcaa8242a",
+      "bytes": 1091,
+      "role": "original implementation snapshot",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\emm_selectors.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\code\\original\\emm_selectors.py",
+      "verified_keep_sha256": "231e7309554e2693ced0fe5427da52a06a64771605147ea4f42531bfcaa8242a"
+    },
+    {
+      "source": "beam_search/logistic_model.py",
+      "archive": "M_reference_discovery/code/original/logistic_model.py",
+      "sha256": "a197c0e1f44f6155caba53063b645df390cecf5a559b5fcca907a0b39c80cd11",
+      "bytes": 1535,
+      "role": "original implementation snapshot",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\logistic_model.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\code\\original\\logistic_model.py",
+      "verified_keep_sha256": "a197c0e1f44f6155caba53063b645df390cecf5a559b5fcca907a0b39c80cd11"
+    },
+    {
+      "source": "beam_search/run_beam_search.py",
+      "archive": "M_reference_discovery/code/original/run_beam_search.py",
+      "sha256": "c905feaedbb037378cb7131a438f79064ad668c3513c0c3e93263d597d311933",
+      "bytes": 1530,
+      "role": "original implementation snapshot",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\run_beam_search.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\code\\original\\run_beam_search.py",
+      "verified_keep_sha256": "c905feaedbb037378cb7131a438f79064ad668c3513c0c3e93263d597d311933"
+    },
+    {
+      "source": "beam_search/report_top_subgroups.py",
+      "archive": "M_reference_discovery/code/added/report_top_subgroups.py",
+      "sha256": "d9f5d9c6517e35ec8c0b6a556e7b2a9dc89bbf716aa4f7f8cf9d3afccfe0218f",
+      "bytes": 5932,
+      "role": "added reporting code",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\code\\added\\report_top_subgroups.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\report_top_subgroups.py",
+      "verified_keep_sha256": "3db411083f637df2720c4719517368fbf4478b41c938584dbc48cf9a7116c9f6"
+    },
+    {
+      "source": "beam_search/emm_beam_search_results.csv",
+      "archive": "M_reference_discovery/tables/all_29_subgroups.csv",
+      "sha256": "17c2804e57d2cfc9d71e58d0574530655095eaa3b190cc5b15c46b6d0f4a5b07",
+      "bytes": 6253,
+      "role": "original full M results",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\emm_beam_search_results.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\tables\\all_29_subgroups.csv",
+      "verified_keep_sha256": "17c2804e57d2cfc9d71e58d0574530655095eaa3b190cc5b15c46b6d0f4a5b07"
+    },
+    {
+      "source": "beam_search/results/top_10_subgroups.csv",
+      "archive": "M_reference_discovery/tables/top_10_subgroups.csv",
+      "sha256": "44836e3b8f322b60e0a79dadb185c85dba6d7d190a78ff891d3600717ae7a108",
+      "bytes": 3406,
+      "role": "M top ten including A3 AMEs",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\tables\\top_10_subgroups.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\top_10_subgroups.csv",
+      "verified_keep_sha256": "44836e3b8f322b60e0a79dadb185c85dba6d7d190a78ff891d3600717ae7a108"
+    },
+    {
+      "source": "beam_search/results/top_10_subgroups.txt",
+      "archive": "M_reference_discovery/reports/top_10_subgroups.txt",
+      "sha256": "9ce4c534433e050d29629d7dbaf41065d06443fbbc4783cc322a10ffbc46a8af",
+      "bytes": 2182,
+      "role": "M top ten including A3 AMEs",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\reports\\top_10_subgroups.txt",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\top_10_subgroups.txt",
+      "verified_keep_sha256": "9ce4c534433e050d29629d7dbaf41065d06443fbbc4783cc322a10ffbc46a8af"
+    },
+    {
+      "source": "beam_search/results/top_10_subgroups.tex",
+      "archive": "M_reference_discovery/latex/top_10_subgroups.tex",
+      "sha256": "85c4ddfc43c1b613541970e4cfc4b743073ee476e7ec6065856fa982a378ff25",
+      "bytes": 1991,
+      "role": "M top ten including A3 AMEs",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\M_reference_discovery\\latex\\top_10_subgroups.tex",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\top_10_subgroups.tex",
+      "verified_keep_sha256": "85c4ddfc43c1b613541970e4cfc4b743073ee476e7ec6065856fa982a378ff25"
+    },
+    {
+      "source": "beam_search/run_reciprocity_comparison.py",
+      "archive": "A1_reciprocity_measure/code/run_reciprocity_comparison.py",
+      "sha256": "05c3e207e91df75c593aca7cf0f5a8351b6330e3b800868221c175b9e30b8e3c",
+      "bytes": 22223,
+      "role": "added experiment code",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\code\\run_reciprocity_comparison.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\run_reciprocity_comparison.py",
+      "verified_keep_sha256": "d9392840623e5f0ece516ad90657a04b98d3570845baeaee95da1651de2d65e1"
+    },
+    {
+      "source": "beam_search/audit_repeated_replies.py",
+      "archive": "A1_reciprocity_measure/code/audit_repeated_replies.py",
+      "sha256": "5343a3b8651f442ba42a491aaf4a416955fd8e451fef9d2c777d042866e4f0d4",
+      "bytes": 2566,
+      "role": "added experiment code",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\code\\audit_repeated_replies.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\audit_repeated_replies.py",
+      "verified_keep_sha256": "281769977bcc22f467d07fa567dfe1aefbce8b9c7b749a5290eeafb4a19443b6"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/a1_comparison.tex",
+      "archive": "A1_reciprocity_measure/latex/a1_comparison.tex",
+      "sha256": "71f793784eece5ab7dd17b28b0f0a0b88482edf6b8b38623e6dd5889d5079c40",
+      "bytes": 1513,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\latex\\a1_comparison.tex",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\a1_comparison.tex",
+      "verified_keep_sha256": "71f793784eece5ab7dd17b28b0f0a0b88482edf6b8b38623e6dd5889d5079c40"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/a1_report.txt",
+      "archive": "A1_reciprocity_measure/reports/a1_report.txt",
+      "sha256": "3b25660ec3495a25ca769198f136f6730d1a8a25e97dc44cf2838d6ae9c698d6",
+      "bytes": 3873,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\reports\\a1_report.txt",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\a1_report.txt",
+      "verified_keep_sha256": "3b25660ec3495a25ca769198f136f6730d1a8a25e97dc44cf2838d6ae9c698d6"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/all_shared_subgroups.csv",
+      "archive": "A1_reciprocity_measure/tables/all_shared_subgroups.csv",
+      "sha256": "a98833064a48cd19a37e612bf4cb45c8f583bd3c03d4987ed77f9808161167f5",
+      "bytes": 15721,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\tables\\all_shared_subgroups.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\all_shared_subgroups.csv",
+      "verified_keep_sha256": "a98833064a48cd19a37e612bf4cb45c8f583bd3c03d4987ed77f9808161167f5"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/binary_top_10.csv",
+      "archive": "A1_reciprocity_measure/tables/binary_top_10.csv",
+      "sha256": "1b36c1a0d75e0a2f21ec4ed36e215bbf7ac144aad77287a1c70de9b6d724c884",
+      "bytes": 2755,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\tables\\binary_top_10.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\binary_top_10.csv",
+      "verified_keep_sha256": "1b36c1a0d75e0a2f21ec4ed36e215bbf7ac144aad77287a1c70de9b6d724c884"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/checkpoint_migration.json",
+      "archive": "A1_reciprocity_measure/audits/checkpoint_migration.json",
+      "sha256": "3859e5bc3fa54b9d6636d45759c4fbf4fae09a877f3fb178ee1f92306b50c0ba",
+      "bytes": 942,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\audits\\checkpoint_migration.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\checkpoint_migration.json",
+      "verified_keep_sha256": "3859e5bc3fa54b9d6636d45759c4fbf4fae09a877f3fb178ee1f92306b50c0ba"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/data_audit.json",
+      "archive": "A1_reciprocity_measure/audits/data_audit.json",
+      "sha256": "10f362ede0ee5177b052e8f719f753707bc477b841f617ea73ead1ee9fcf45ce",
+      "bytes": 469,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\audits\\data_audit.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\data_audit.json",
+      "verified_keep_sha256": "10f362ede0ee5177b052e8f719f753707bc477b841f617ea73ead1ee9fcf45ce"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/0d3bd6d971dc0df8.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/0d3bd6d971dc0df8.json",
+      "sha256": "75eec3de4f23fed03f21f813d1d9db8211c55269eaf13d94b3ab9bd1d06a56b6",
+      "bytes": 2221,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\0d3bd6d971dc0df8.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\0d3bd6d971dc0df8.json",
+      "verified_keep_sha256": "004db75befeb75d5aab6be24c4048871925240fac8fe14abb63e0b4be12b4455"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/0f3b3bdc4f2c2828.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/0f3b3bdc4f2c2828.json",
+      "sha256": "24f1048b2c2457c34d18a0784368e994bb6a99e73a3314a7bac0e9e8cfecb9f5",
+      "bytes": 525,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\0f3b3bdc4f2c2828.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\0f3b3bdc4f2c2828.json",
+      "verified_keep_sha256": "eedbf5c309587eeb68cfc2504e4fa5d8a5ca32fee37bb85d40416d7c3f9d31d5"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/10a667b959233b77.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/10a667b959233b77.json",
+      "sha256": "466482bcf2ccf69869743694bfa61bc9e128a280de85b79310b1dce83e12aa7f",
+      "bytes": 511,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\10a667b959233b77.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\10a667b959233b77.json",
+      "verified_keep_sha256": "0c85a8f515ea4988dd821185c37bdf3bba347f80ad2441ac830aed86da487bce"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/14d210238e301a2e.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/14d210238e301a2e.json",
+      "sha256": "e75091a0fc166c810f111bab9773c973ccd8602dd848ecedb14ff4731c85d8e6",
+      "bytes": 310,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\14d210238e301a2e.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\14d210238e301a2e.json",
+      "verified_keep_sha256": "44e49cbec939e55d5dc048ecf4faddca42a3feb411667eb5cf715d5709b3247f"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/185b649cdcaed33a.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/185b649cdcaed33a.json",
+      "sha256": "e39e1ef5cbca3f6128f0dedb95cab518b065b1e8aa242370b71aec33d00a70ed",
+      "bytes": 614,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\185b649cdcaed33a.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\185b649cdcaed33a.json",
+      "verified_keep_sha256": "dbbcc6bdf4e4b623a288d53b3d9122ac778dd000444d92fbc4ebc3359761af0c"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/1f6ec0c28b37d3a6.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/1f6ec0c28b37d3a6.json",
+      "sha256": "8c7ff88d6edca4a8a8681a339013969f30d4ea1f884d8d366d222b20e0e02935",
+      "bytes": 524,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\1f6ec0c28b37d3a6.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\1f6ec0c28b37d3a6.json",
+      "verified_keep_sha256": "ac015d973e95fbb1633ac9eb6b98a12c6034ae22360549d02f6d4bcba912ae26"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/222777f0dbcaa71a.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/222777f0dbcaa71a.json",
+      "sha256": "caf32d57c88a447657ab5fc54f7d6ef24f6c8b2ecdef6d49c3557ebe9e5c0520",
+      "bytes": 830,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\222777f0dbcaa71a.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\222777f0dbcaa71a.json",
+      "verified_keep_sha256": "4c7026062a698aa422b0c67f57e7f2e1d87309a4ccd59bb29058a9ac0b9a39e8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/27c7c8cde9eadd42.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/27c7c8cde9eadd42.json",
+      "sha256": "5e3f93a0209462cce58a6488a370bcd7fe22d7c2daba20b44737700ccf398cdf",
+      "bytes": 599,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\27c7c8cde9eadd42.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\27c7c8cde9eadd42.json",
+      "verified_keep_sha256": "248350b83a635244a74e6baf3c1db038f94750c4d2b73f9cb0c11378e8994de8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/29908a12d097e4d6.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/29908a12d097e4d6.json",
+      "sha256": "097f5b0d47db4d4393e168a11e83e0fb9a89dc9fb8e92cd3436326244dc151ec",
+      "bytes": 522,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\29908a12d097e4d6.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\29908a12d097e4d6.json",
+      "verified_keep_sha256": "785cc0d595a4872b883e8e5add9b1c47e62f4efd712b04ca6eda4bc69c285676"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/2bf2aaadff6c921e.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/2bf2aaadff6c921e.json",
+      "sha256": "539560bcd0688bbac3611beb3d4c5db408156fc80fc80d15f6e68ecc5b113ac9",
+      "bytes": 780,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\2bf2aaadff6c921e.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\2bf2aaadff6c921e.json",
+      "verified_keep_sha256": "8a21a48e97309fc72e74c231295f81fab1a13f2c3cc61047857d1c81f387d747"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/2eeef6a57cb003e7.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/2eeef6a57cb003e7.json",
+      "sha256": "c415c400f67c3878e3ca32f902e8a250920b8d4f9218c56e36bd68d461f8e4a7",
+      "bytes": 396,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\2eeef6a57cb003e7.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\2eeef6a57cb003e7.json",
+      "verified_keep_sha256": "d3cf96ddc2191307091f4ea68c2d234e9eb5372daf357990434fe2162bc3f445"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/31a46e244fdabf6f.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/31a46e244fdabf6f.json",
+      "sha256": "39232e28669d2b0c5344701b2add552e2ee536398e0135cbff645f5e292340fe",
+      "bytes": 597,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\31a46e244fdabf6f.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\31a46e244fdabf6f.json",
+      "verified_keep_sha256": "17f63dd0ceb5ac06b314d25df1cec715111ae60a9238c83b6994739e2c54406c"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/3996758bd97384e2.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/3996758bd97384e2.json",
+      "sha256": "cedf2f465c3bdee7ec6d40105f9d2cbb0b8fe44f727f1370ad81294d9faf1791",
+      "bytes": 527,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\3996758bd97384e2.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\3996758bd97384e2.json",
+      "verified_keep_sha256": "7bcf3fe91808b9380e0a29ff6abd51dbe79df35512fda820d7521456ca7e7086"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/4031196fa3349266.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/4031196fa3349266.json",
+      "sha256": "2e2a09d7f18c16e9cf5d9624378d087aef603c3f7e0fa20d41062b6139ef75ef",
+      "bytes": 299,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\4031196fa3349266.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\4031196fa3349266.json",
+      "verified_keep_sha256": "cbe894c66abd3f72ec32efbf1113b6dd209ea324d3ad53f088cbf5a76672420b"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/41d951d60c377e09.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/41d951d60c377e09.json",
+      "sha256": "9fe0e2eb5c77a280fd89c2ccc47e503a3bb153534085cc2deff3acf8aa622cba",
+      "bytes": 597,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\41d951d60c377e09.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\41d951d60c377e09.json",
+      "verified_keep_sha256": "da79084be013b3676e4e2a61463e5032df06ef0ad44c3a89c2c9d4dcea055989"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/48ba4de9e69cd567.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/48ba4de9e69cd567.json",
+      "sha256": "38b3f9d003bdb2bf899b83df46b183c42c34e42c53978ae4e333bf5fc2b46749",
+      "bytes": 530,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\48ba4de9e69cd567.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\48ba4de9e69cd567.json",
+      "verified_keep_sha256": "d2655713be77bedaba2bdf2811ebd775c9bbdc1d39d03b09fafecec8c8b718f8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/4f0e0dc2b2e5f457.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/4f0e0dc2b2e5f457.json",
+      "sha256": "5d878035877bc60e4c1b10dad4f240a9dbff8a5dcba93afe3ff68d23c7e9e368",
+      "bytes": 803,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\4f0e0dc2b2e5f457.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\4f0e0dc2b2e5f457.json",
+      "verified_keep_sha256": "6073a86d0fd577c48aae737df0037d408cbe3c337a82fd023a85a82cba619973"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/52367a6622b19f08.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/52367a6622b19f08.json",
+      "sha256": "fb260f0ff7e629fc4ab1f75c56ec6992fbcd2ec122ec354d81ed5736eb8b0a3f",
+      "bytes": 590,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\52367a6622b19f08.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\52367a6622b19f08.json",
+      "verified_keep_sha256": "2dfeee4b1a73dbfbd9be9268691c0db199f9eddc3eb25d7d43249d3d33c06a2e"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/5ef0efc5b79fbe16.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/5ef0efc5b79fbe16.json",
+      "sha256": "76e9ed65972e4e5b76b3e55c66ae0f18aa6f6dc35f399cb1dce4a82ae3a3ddd1",
+      "bytes": 844,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\5ef0efc5b79fbe16.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\5ef0efc5b79fbe16.json",
+      "verified_keep_sha256": "df7ad636b36ee194844c0111c8d13d6f6a79372b5f0ecd8a80db790bfe471e8a"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/61dbc349a2e75980.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/61dbc349a2e75980.json",
+      "sha256": "331cce75b0b4c3d6ba1fcbe87165ee0496742b64ba2f59d6e18794055ed3b11b",
+      "bytes": 531,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\61dbc349a2e75980.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\61dbc349a2e75980.json",
+      "verified_keep_sha256": "b9ecc698e98b79ffeac5529a75c6df51710d3a485e80fd2b56c7a960a9552069"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/692b6e0351aa8a35.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/692b6e0351aa8a35.json",
+      "sha256": "e249bd516baec18b80b452302844e8d2a60c3b02f589b636477ed682d5eeb91e",
+      "bytes": 599,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\692b6e0351aa8a35.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\692b6e0351aa8a35.json",
+      "verified_keep_sha256": "41590cbce1671d03ca70ff122cd81bde93962c7bb3c65c5743594f49cd6ba975"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/73e4fd09b11535fe.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/73e4fd09b11535fe.json",
+      "sha256": "6114d2143ee9955ede13866ff2a37945664519e0796ca53908bd61f2a323d048",
+      "bytes": 309,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\73e4fd09b11535fe.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\73e4fd09b11535fe.json",
+      "verified_keep_sha256": "f3f57cba449ead116774d4e26789faea09c911765b29fc8a130056a95a092369"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/841e77ebfa5bd544.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/841e77ebfa5bd544.json",
+      "sha256": "feedc7ba74b86ea6d339a9cfee7ba8de933a2d68a05e809302226a308ac14508",
+      "bytes": 591,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\841e77ebfa5bd544.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\841e77ebfa5bd544.json",
+      "verified_keep_sha256": "3a25feec267b1c636e27c16e2accf50351b6643459e3f4af8b0a40c44bc4d5e8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/8a380fe6b07679af.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/8a380fe6b07679af.json",
+      "sha256": "8a0e686d0a8a1fb153d01bab9a114512dc917f2a7c6d740ba55257aae3c8adba",
+      "bytes": 522,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\8a380fe6b07679af.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\8a380fe6b07679af.json",
+      "verified_keep_sha256": "a85816f6ab35a139abaccb0a62ce11e85c02bfc60eeb8445dc7a934fad46c12d"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/966ddd7e3cbbf1e9.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/966ddd7e3cbbf1e9.json",
+      "sha256": "e5e0d34ebdf333cd6e6d483b4499143693efb92eab7a227881a41bd6230dee22",
+      "bytes": 380,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\966ddd7e3cbbf1e9.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\966ddd7e3cbbf1e9.json",
+      "verified_keep_sha256": "62c244aa241b560c29d8348ec7aafbd52e507d17b0a31bfed368466833ade9de"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/9ad7c8b22142659d.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/9ad7c8b22142659d.json",
+      "sha256": "ca46d4e45eb2a114fbc63817cea2302cf1e9818e246401cfa5e3cb752c66ce9a",
+      "bytes": 598,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\9ad7c8b22142659d.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\9ad7c8b22142659d.json",
+      "verified_keep_sha256": "bef8ecbaac4759bfd781c455022bdd3e8a0a00d4b9ed8bf930115e51b4f48d2d"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/9ba9c65362de0372.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/9ba9c65362de0372.json",
+      "sha256": "3fdc5320a007154e2444e1ab82fe8328f98acf1b17657d534327e4783c3e81dd",
+      "bytes": 526,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\9ba9c65362de0372.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\9ba9c65362de0372.json",
+      "verified_keep_sha256": "c02c14a07bd4e83bbf5458568a3b82af864636b12428369024eb2bb508cdcb68"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/a4de59bb942e5a86.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/a4de59bb942e5a86.json",
+      "sha256": "e2d05f61b13930178edda4df4d4bd26ecd105b4bd3aa4611510abc6119532d91",
+      "bytes": 583,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\a4de59bb942e5a86.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\a4de59bb942e5a86.json",
+      "verified_keep_sha256": "e9ca7fee6550f9d6cc956864d366803d146c710dea28166b40bcf9a7abd3130c"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/aee028537e725e14.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/aee028537e725e14.json",
+      "sha256": "1bf4e4fe3d2126bbf44efac9f6cbc283ee26a83a95db7d402117292ebe2af566",
+      "bytes": 1693,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\aee028537e725e14.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\aee028537e725e14.json",
+      "verified_keep_sha256": "767706d6d2324bbf2623497f0f6547e24a6800ab09af0a3a02bf553c3071ebaa"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/b2f847ab2dbcdabe.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/b2f847ab2dbcdabe.json",
+      "sha256": "04e391c0b980baf8f404e06df273f34dd7f6f0936261da21756b75073acb6e3c",
+      "bytes": 532,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\b2f847ab2dbcdabe.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\b2f847ab2dbcdabe.json",
+      "verified_keep_sha256": "eae6db4c99c016167ce2235967167a9d9e883e2b04b3be1c7633ccece2d82a58"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/be2f38a5e3208ac1.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/be2f38a5e3208ac1.json",
+      "sha256": "9a0fe002b2766b0f70762def852add390883484243d636bdaec4579c6deba1cb",
+      "bytes": 590,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\be2f38a5e3208ac1.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\be2f38a5e3208ac1.json",
+      "verified_keep_sha256": "a94ff6837a8f53d71714fc0945fcbad429fedb8fc6a0e8dc21fea4b51c96c404"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/d64b1546d063a2dd.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/d64b1546d063a2dd.json",
+      "sha256": "b62de2038d653f071397d6062ab945eea2d1f900f43a19c81d3875dd4b63b17d",
+      "bytes": 595,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\d64b1546d063a2dd.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\d64b1546d063a2dd.json",
+      "verified_keep_sha256": "0838ced9944848faef567d435cf3766badd6a0521f159c60d5bee9fd3af78e13"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/e2b5b831213a2484.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/e2b5b831213a2484.json",
+      "sha256": "d7de9f07f2c312c9007f4122be5931b9ca7e08a82494fa0c987e475d322fe88c",
+      "bytes": 526,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\e2b5b831213a2484.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\e2b5b831213a2484.json",
+      "verified_keep_sha256": "d6b192ab3ea4abfe4e3a28d62e8690a72b52e85a6786c56b182b93385e1392f4"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/e3695d1efe1b46f8.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/e3695d1efe1b46f8.json",
+      "sha256": "60ab80ca4d09c1e33892361924496c8c353e66c7ba6540d899cdeb0a796a685e",
+      "bytes": 530,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\e3695d1efe1b46f8.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\e3695d1efe1b46f8.json",
+      "verified_keep_sha256": "920f7125a275be48225626601cbd841dfe2102f8ea4cc74495dc7521e8bbc139"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/fits/e6d64bc8467ad2b3.json",
+      "archive": "A1_reciprocity_measure/model_checkpoints/e6d64bc8467ad2b3.json",
+      "sha256": "5b95fb51b5c1428e8625822060a9e368694589432981ee30fe0a5de5e4072c54",
+      "bytes": 530,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\model_checkpoints\\e6d64bc8467ad2b3.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\fits\\e6d64bc8467ad2b3.json",
+      "verified_keep_sha256": "e16da83dcee1c9d1cbe4007214a59e777e0e89640ff746199e4b2ede2d6bafa8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/proportional_beam_search_results.csv",
+      "archive": "A1_reciprocity_measure/tables/proportional_beam_search_results.csv",
+      "sha256": "5808a8033c16a04f0b7ad4f9e5b36a20de0d4450e7fac26b43660783f04f6c12",
+      "bytes": 6561,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\tables\\proportional_beam_search_results.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\proportional_beam_search_results.csv",
+      "verified_keep_sha256": "5808a8033c16a04f0b7ad4f9e5b36a20de0d4450e7fac26b43660783f04f6c12"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/proportional_top_10.csv",
+      "archive": "A1_reciprocity_measure/tables/proportional_top_10.csv",
+      "sha256": "3b5d3d7478ba1695087f63d71036f1bb819f4ed886305c95caccdacc70fc28c7",
+      "bytes": 2930,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\tables\\proportional_top_10.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\proportional_top_10.csv",
+      "verified_keep_sha256": "3b5d3d7478ba1695087f63d71036f1bb819f4ed886305c95caccdacc70fc28c7"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/proportional_top_10.tex",
+      "archive": "A1_reciprocity_measure/latex/proportional_top_10.tex",
+      "sha256": "3bcc311cc9cc51254d64e4f7234eccb1138680b706e6c6fc365de4405c671c28",
+      "bytes": 1487,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\latex\\proportional_top_10.tex",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\proportional_top_10.tex",
+      "verified_keep_sha256": "3bcc311cc9cc51254d64e4f7234eccb1138680b706e6c6fc365de4405c671c28"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/search_audit.json",
+      "archive": "A1_reciprocity_measure/audits/search_audit.json",
+      "sha256": "b27edfffc8b3abe4126c5dbec0147fcc68ef4fbc7ffbc686e1cf991492e757c8",
+      "bytes": 11478,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\audits\\search_audit.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\search_audit.json",
+      "verified_keep_sha256": "b27edfffc8b3abe4126c5dbec0147fcc68ef4fbc7ffbc686e1cf991492e757c8"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/summary.json",
+      "archive": "A1_reciprocity_measure/reports/summary.json",
+      "sha256": "71034a618f2a7ad755c165e0a7348f6b22a6209cf47508d1317c6c850028266e",
+      "bytes": 951,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\reports\\summary.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\summary.json",
+      "verified_keep_sha256": "71034a618f2a7ad755c165e0a7348f6b22a6209cf47508d1317c6c850028266e"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/top_10_comparison.csv",
+      "archive": "A1_reciprocity_measure/tables/top_10_comparison.csv",
+      "sha256": "3de5d02afa6718bf6f42dba294a525d8daf2d412dea1ee1338fc4d8e65fbdff3",
+      "bytes": 6534,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\tables\\top_10_comparison.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\top_10_comparison.csv",
+      "verified_keep_sha256": "3de5d02afa6718bf6f42dba294a525d8daf2d412dea1ee1338fc4d8e65fbdff3"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/weighted_feasibility.json",
+      "archive": "A1_reciprocity_measure/audits/weighted_feasibility.json",
+      "sha256": "8257c45c5f933f41b7b0a4126390e93f2cb18c292642840ceffa963c70db67c1",
+      "bytes": 778,
+      "role": "A1 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\audits\\weighted_feasibility.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\weighted_feasibility.json",
+      "verified_keep_sha256": "8257c45c5f933f41b7b0a4126390e93f2cb18c292642840ceffa963c70db67c1"
+    },
+    {
+      "source": "beam_search/run_dependence_analysis.py",
+      "archive": "A2_user_dependence/code/run_dependence_analysis.py",
+      "sha256": "541449623b7f86a10d3ef3bd3e4e6d807212587629c7598c9820dea55e75b3bd",
+      "bytes": 15653,
+      "role": "added experiment code",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\code\\run_dependence_analysis.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\run_dependence_analysis.py",
+      "verified_keep_sha256": "70207cb2da5301a110105afe0d5acf1cffde30d719a95f8eb1cd08bed53242f6"
+    },
+    {
+      "source": "beam_search/results/dependence/a2_comparison.csv",
+      "archive": "A2_user_dependence/tables/a2_comparison.csv",
+      "sha256": "a31ad7275dda5761a75c42f7e5db3b6e75748614b87d5abeb76370bcb5a34e30",
+      "bytes": 5650,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\tables\\a2_comparison.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\a2_comparison.csv",
+      "verified_keep_sha256": "a31ad7275dda5761a75c42f7e5db3b6e75748614b87d5abeb76370bcb5a34e30"
+    },
+    {
+      "source": "beam_search/results/dependence/a2_interpretation.txt",
+      "archive": "A2_user_dependence/reports/a2_interpretation.txt",
+      "sha256": "55059ffbc81e92a02265974acfd622de65bc51fab37ec5d0402db7013b369219",
+      "bytes": 1033,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\reports\\a2_interpretation.txt",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\a2_interpretation.txt",
+      "verified_keep_sha256": "55059ffbc81e92a02265974acfd622de65bc51fab37ec5d0402db7013b369219"
+    },
+    {
+      "source": "beam_search/results/dependence/a2_report.txt",
+      "archive": "A2_user_dependence/reports/a2_report.txt",
+      "sha256": "ac9c3510f5f2c9e907e51c6df7b09cc5633b8b9f06e9333c20352586059899fb",
+      "bytes": 2882,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\reports\\a2_report.txt",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\a2_report.txt",
+      "verified_keep_sha256": "ac9c3510f5f2c9e907e51c6df7b09cc5633b8b9f06e9333c20352586059899fb"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_1.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_1.json",
+      "sha256": "02e2167f8e0be2af4155d8c633cf17198207d41b7717e0f58fb88b5ae39f212e",
+      "bytes": 885,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_1.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_1.json",
+      "verified_keep_sha256": "913e35ef7de2ea31167815b39cfdb147ab074499fd7f02a7218091e201ee5cf7"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_10.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_10.json",
+      "sha256": "171c94bfa2420b9e322a414850b8f4413d3f9dede081ecf9c43a387b38d93ad1",
+      "bytes": 894,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_10.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_10.json",
+      "verified_keep_sha256": "f22c6d166ddab587f4e0ffac4c8a4e78aa52ca59f8db4a011e1a598cd20662dc"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_2.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_2.json",
+      "sha256": "102d215c030436f3e0be271cef08a8053828a0d23b8e7ebe38ba28698f9a575b",
+      "bytes": 883,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_2.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_2.json",
+      "verified_keep_sha256": "3d820db2d5db9aef73efd4a7e5d0fcc589aabe3d61ffb34ff562a80bbd255f05"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_3.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_3.json",
+      "sha256": "d191c03c66477653ab2581fb4c3bd07b67e8397025a962ba7c348d0d80cfb414",
+      "bytes": 890,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_3.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_3.json",
+      "verified_keep_sha256": "44293f9fd5e30cc7f0a3babb221c450146b144ea001bb1533c96e10d7b05f36d"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_4.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_4.json",
+      "sha256": "3cbb5991b7fdab9358a1c08aa91b4a8c1c107804bf78b1e9edccd21fa13dbbea",
+      "bytes": 890,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_4.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_4.json",
+      "verified_keep_sha256": "f9bcd08e5533ff8d9430f4dc461eba60706079c5db453c6b48b226b8530d6bd0"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_5.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_5.json",
+      "sha256": "9016ccc1703c4bb3b1d285737e7bb52d300566116e9a51456adc1a0aec2f0164",
+      "bytes": 883,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_5.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_5.json",
+      "verified_keep_sha256": "c3b5cac706878d5cd09b43f54cb0c27a214c6e6d79f7cc9c84d9edafce71226b"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_6.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_6.json",
+      "sha256": "540b88fce8f8191c4bce8b4109c9a0627e1a44312f69231bf03dfe606d0fd427",
+      "bytes": 892,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_6.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_6.json",
+      "verified_keep_sha256": "f4721bc9b406f06d4c61ea1ef325d0f80dd17804332abe7b0e46f93e6b652dc2"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_7.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_7.json",
+      "sha256": "fa67fcd3a7e671e3e3f815acd2faa51e88626b1072a21c6460757ceaa79500a2",
+      "bytes": 865,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_7.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_7.json",
+      "verified_keep_sha256": "1e056f94c672f2f7efe90763f9058f5280e7ea1331382eb5252560a0edcb5938"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_8.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_8.json",
+      "sha256": "0e2df8ce1eb23ff2d92b6ddcd86f715164e8d77cab7331daebdca3a34c6cf788",
+      "bytes": 892,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_8.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_8.json",
+      "verified_keep_sha256": "5a3772945ff2c8b259b3f483048aa34add06092297fa331c813b6e334fb5e7ca"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_9.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_9.json",
+      "sha256": "2c4166faa88d2e3ad52758c42bbbae2f4f8c8dc640ab1eea5dfe8daa987716bd",
+      "bytes": 866,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_9.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_9.json",
+      "verified_keep_sha256": "64121d151dc976fe0fb37d2e0d311d69887c04807a3be7ad13a81f45767e0ce8"
+    },
+    {
+      "source": "beam_search/results/dependence/fit_reference.json",
+      "archive": "A2_user_dependence/model_checkpoints/fit_reference.json",
+      "sha256": "565284b007037f97be6e41b398f12ea9d93103b5fbf31f3e5571f11894b371e0",
+      "bytes": 860,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\model_checkpoints\\fit_reference.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\fit_reference.json",
+      "verified_keep_sha256": "1140d962d2059110c4b416c677e86f738be116ef49d5cf924753d9717fd12efc"
+    },
+    {
+      "source": "beam_search/results/dependence/protected_files_before.json",
+      "archive": "A2_user_dependence/audits/protected_files_before.json",
+      "sha256": "2f8be5deb8cf7f5b2201ed568f5d529bcefd319436048c9e27acfc5a0744f369",
+      "bytes": 2618,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\audits\\protected_files_before.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\protected_files_before.json",
+      "verified_keep_sha256": "2f8be5deb8cf7f5b2201ed568f5d529bcefd319436048c9e27acfc5a0744f369"
+    },
+    {
+      "source": "beam_search/results/dependence/source_integrity.json",
+      "archive": "A2_user_dependence/audits/source_integrity.json",
+      "sha256": "610c50ed8967b4e32e10fe5afb791d4ce715af1d8bdea99a4fa02c114dc50c9d",
+      "bytes": 5414,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\audits\\source_integrity.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\source_integrity.json",
+      "verified_keep_sha256": "610c50ed8967b4e32e10fe5afb791d4ce715af1d8bdea99a4fa02c114dc50c9d"
+    },
+    {
+      "source": "beam_search/results/dependence/summary.json",
+      "archive": "A2_user_dependence/reports/summary.json",
+      "sha256": "1f841c9e9be82282151b6560c36ed4e1e47059d62db6343e6b37fe7c21f0c63f",
+      "bytes": 1201,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\reports\\summary.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\summary.json",
+      "verified_keep_sha256": "1f841c9e9be82282151b6560c36ed4e1e47059d62db6343e6b37fe7c21f0c63f"
+    },
+    {
+      "source": "beam_search/results/dependence/validation.json",
+      "archive": "A2_user_dependence/audits/validation.json",
+      "sha256": "fa478f50fab976a641d74598bdca0f0fcf93214d456242edee1e34ba6fa7aba3",
+      "bytes": 399,
+      "role": "A2 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A2_user_dependence\\audits\\validation.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\dependence\\validation.json",
+      "verified_keep_sha256": "fa478f50fab976a641d74598bdca0f0fcf93214d456242edee1e34ba6fa7aba3"
+    },
+    {
+      "source": "beam_search/run_ame_analysis.py",
+      "archive": "A3_probability_scale/code/run_ame_analysis.py",
+      "sha256": "e35ae5ab871b0780db4557c2aae14fa23d0c9a230c2718fdcc800abc9186fd1a",
+      "bytes": 12520,
+      "role": "added experiment code",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\code\\run_ame_analysis.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\run_ame_analysis.py",
+      "verified_keep_sha256": "7c62b49ea786801e247fdc2df72eba332fe0d3a31c259d50be4828ca30ea93c6"
+    },
+    {
+      "source": "beam_search/results/ame/a3_report.txt",
+      "archive": "A3_probability_scale/reports/a3_report.txt",
+      "sha256": "4b611b104f08bb07043541b025f8e1e61af4a8a6e7e9dfbc2942c5e319ee7ab3",
+      "bytes": 2317,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\reports\\a3_report.txt",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\a3_report.txt",
+      "verified_keep_sha256": "4b611b104f08bb07043541b025f8e1e61af4a8a6e7e9dfbc2942c5e319ee7ab3"
+    },
+    {
+      "source": "beam_search/results/ame/a3_table.tex",
+      "archive": "A3_probability_scale/latex/a3_table.tex",
+      "sha256": "093ee54900449af74a832634b2fdf3c88b33839b7e166c02beb5c454c1abdfe9",
+      "bytes": 1516,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\latex\\a3_table.tex",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\a3_table.tex",
+      "verified_keep_sha256": "093ee54900449af74a832634b2fdf3c88b33839b7e166c02beb5c454c1abdfe9"
+    },
+    {
+      "source": "beam_search/results/ame/fit_1.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_1.json",
+      "sha256": "9e43d8be34b3739e8aa9f019f6b4a68719594f5b786b671f691eae5b16cfb2f7",
+      "bytes": 460,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_1.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_1.json",
+      "verified_keep_sha256": "2382e78fcb47ca2b8609234ae1a2e304bb395a504a90ac2eabcd0a38ca7c3a03"
+    },
+    {
+      "source": "beam_search/results/ame/fit_10.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_10.json",
+      "sha256": "69f7b08ce57d3dcb63c02be8e37aca1d60df85d1594da6b75e7f82656b436da9",
+      "bytes": 464,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_10.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_10.json",
+      "verified_keep_sha256": "597f993cc0cade6b30669d2e200a8fea435bfeb78bf650da3745539afb8f878e"
+    },
+    {
+      "source": "beam_search/results/ame/fit_2.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_2.json",
+      "sha256": "a97c045e0b80f86fe67cf901a6a2a758c492f48fbfebbae396217205bc51b6ed",
+      "bytes": 460,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_2.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_2.json",
+      "verified_keep_sha256": "aa9b648d6906cc9a67b55b93dffcfb647b059cd582eed410f3274a710c2357ea"
+    },
+    {
+      "source": "beam_search/results/ame/fit_3.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_3.json",
+      "sha256": "06255facc147f5d54ec1da4dffa0597262af29b4309740e51dde9784eea6e2e9",
+      "bytes": 459,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_3.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_3.json",
+      "verified_keep_sha256": "921a32e7e8daa08da2757795b49d6e038958f6a8e9cc7bfbbae4b83903014090"
+    },
+    {
+      "source": "beam_search/results/ame/fit_4.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_4.json",
+      "sha256": "e57fff191ce1188c5c5626e26f443d3a0efef75230c1a20474b5769a5ab6b245",
+      "bytes": 449,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_4.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_4.json",
+      "verified_keep_sha256": "8e28aa2052838fd3d2f79671ba3a96f2c175e3c4ac89e0638a5c54da5206274a"
+    },
+    {
+      "source": "beam_search/results/ame/fit_5.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_5.json",
+      "sha256": "07321acb609aff6b883872112cddb83708bb441c25f25b7f8a13f69f6217c5ef",
+      "bytes": 461,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_5.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_5.json",
+      "verified_keep_sha256": "9c167d3cd4576fd81daf51aa15a1d3d9e9c7fb311f0b338240ef200458a57245"
+    },
+    {
+      "source": "beam_search/results/ame/fit_6.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_6.json",
+      "sha256": "0d550f1e31b547c5bea2a2981ee7f9e4dba2bd61093d21cc9ad9de9f41326d64",
+      "bytes": 463,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_6.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_6.json",
+      "verified_keep_sha256": "15b85eb2c3f323df37a46f60747576b46dc2bcdaec2e41b976155d20409fe3db"
+    },
+    {
+      "source": "beam_search/results/ame/fit_7.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_7.json",
+      "sha256": "f45ffc54d9a745895522d83a46233da74b080dba782596b185c46a198596284a",
+      "bytes": 435,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_7.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_7.json",
+      "verified_keep_sha256": "6637bf1c9a25f156fc0babd74123504a8c8d314c41f7ee6c0d58b0378ce8e129"
+    },
+    {
+      "source": "beam_search/results/ame/fit_8.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_8.json",
+      "sha256": "516e273537d7ec89f4aeaafb41915c76cc4e2bb2053072f6ce7bdb6983bef438",
+      "bytes": 459,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_8.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_8.json",
+      "verified_keep_sha256": "902ee07fc48999129056d625ef78537107114bbba1d4f95b9804d1207e82294d"
+    },
+    {
+      "source": "beam_search/results/ame/fit_9.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_9.json",
+      "sha256": "d4c5f0e82be128813cbf26614ab24232171136f07896dcffd0ebd5356056e989",
+      "bytes": 435,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_9.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_9.json",
+      "verified_keep_sha256": "f3ac825555b50f1f8dbc57698a91da406ebdf31191bdbd3323021f2471fb0fdf"
+    },
+    {
+      "source": "beam_search/results/ame/fit_reference.json",
+      "archive": "A3_probability_scale/model_checkpoints/fit_reference.json",
+      "sha256": "4c2bd8a10e1b1c2590d2da95dfedfc49ef5c93e722800513932b259579358d15",
+      "bytes": 431,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\model_checkpoints\\fit_reference.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\fit_reference.json",
+      "verified_keep_sha256": "307bcaed28fc3726fb696214ea7957fc9aa9d5cc08bffe92c4a550e2baed673d"
+    },
+    {
+      "source": "beam_search/results/ame/summary.json",
+      "archive": "A3_probability_scale/reports/summary.json",
+      "sha256": "fba3f888b7d6909d072ad10d15ad045cabd7f77fd38ca0dbd62291fd9c4a073a",
+      "bytes": 636,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\reports\\summary.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\summary.json",
+      "verified_keep_sha256": "fba3f888b7d6909d072ad10d15ad045cabd7f77fd38ca0dbd62291fd9c4a073a"
+    },
+    {
+      "source": "beam_search/results/ame/top_10_ame_comparison.csv",
+      "archive": "A3_probability_scale/tables/top_10_ame_comparison.csv",
+      "sha256": "55daf4af1454947ba788ae78efc6239f50caf3dbcddd3d805b518fa0a34f9fed",
+      "bytes": 3916,
+      "role": "A3 completed output",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A3_probability_scale\\tables\\top_10_ame_comparison.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\ame\\top_10_ame_comparison.csv",
+      "verified_keep_sha256": "55daf4af1454947ba788ae78efc6239f50caf3dbcddd3d805b518fa0a34f9fed"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/data_cache/metadata.json",
+      "archive": "A1_reciprocity_measure/data_cache/metadata.json",
+      "sha256": "1341f987819e308c9a38bf3107e39a51f3689606b05a9de61bea61b12e9e6c2b",
+      "bytes": 137,
+      "role": "A1 cache/migration provenance; historical script is not an entry point",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\data_cache\\metadata.json",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\data_cache\\metadata.json",
+      "verified_keep_sha256": "1341f987819e308c9a38bf3107e39a51f3689606b05a9de61bea61b12e9e6c2b"
+    },
+    {
+      "source": "beam_search/results/reciprocity_comparison/data_cache/runner_before_separation_audit.py",
+      "archive": "A1_reciprocity_measure/audits/cache_history/runner_before_separation_audit.py",
+      "sha256": "59659bc0fc40bc3f248fefc7f3f881c764dd065a61d4f746bd81ca84b88763b0",
+      "bytes": 19007,
+      "role": "A1 cache/migration provenance; historical script is not an entry point",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\A1_reciprocity_measure\\audits\\cache_history\\runner_before_separation_audit.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\beam_search\\results\\reciprocity_comparison\\data_cache\\runner_before_separation_audit.py",
+      "verified_keep_sha256": "59659bc0fc40bc3f248fefc7f3f881c764dd065a61d4f746bd81ca84b88763b0"
+    },
+    {
+      "source": "network_eda/active_months_distribution.png",
+      "archive": "supporting_analyses/temporal/figures/active_months_distribution.png",
+      "sha256": "66aece906ac5c96e6aef5553a2b6adffd0ed1fe7b6d60b737b527a873739ca15",
+      "bytes": 81717,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\active_months_distribution.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\figures\\active_months_distribution.png",
+      "verified_keep_sha256": "66aece906ac5c96e6aef5553a2b6adffd0ed1fe7b6d60b737b527a873739ca15"
+    },
+    {
+      "source": "network_eda/plot_temporal_results.py",
+      "archive": "supporting_analyses/temporal/code/plot_temporal_results.py",
+      "sha256": "660ecd419f3f1bd6ba404fc0c34d49933e45cb6070a27253d85a2d2617435b2f",
+      "bytes": 1341,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\plot_temporal_results.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\code\\plot_temporal_results.py",
+      "verified_keep_sha256": "660ecd419f3f1bd6ba404fc0c34d49933e45cb6070a27253d85a2d2617435b2f"
+    },
+    {
+      "source": "network_eda/return_rate_distribution.png",
+      "archive": "supporting_analyses/temporal/figures/return_rate_distribution.png",
+      "sha256": "f57c403995b61482b77a354f42a7d9567fba8c8030378e3c28cb1affadf3a088",
+      "bytes": 92530,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\return_rate_distribution.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\figures\\return_rate_distribution.png",
+      "verified_keep_sha256": "f57c403995b61482b77a354f42a7d9567fba8c8030378e3c28cb1affadf3a088"
+    },
+    {
+      "source": "network_eda/return_window_comparison.png",
+      "archive": "supporting_analyses/temporal/figures/return_window_comparison.png",
+      "sha256": "6a97f46ee7798724c0cf6b34e38d0d42f9c6169683b084744a2e82c545ab0f20",
+      "bytes": 409867,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\return_window_comparison.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\figures\\return_window_comparison.png",
+      "verified_keep_sha256": "6a97f46ee7798724c0cf6b34e38d0d42f9c6169683b084744a2e82c545ab0f20"
+    },
+    {
+      "source": "network_eda/return_window_gain.png",
+      "archive": "supporting_analyses/temporal/figures/return_window_gain.png",
+      "sha256": "7e3ef296393e88b927b41376f1534e42a6db49cb2cc7105eccd20b3fbaf86bb0",
+      "bytes": 90045,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\return_window_gain.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\figures\\return_window_gain.png",
+      "verified_keep_sha256": "7e3ef296393e88b927b41376f1534e42a6db49cb2cc7105eccd20b3fbaf86bb0"
+    },
+    {
+      "source": "network_eda/temporal_analyzer.py",
+      "archive": "supporting_analyses/temporal/code/temporal_analyzer.py",
+      "sha256": "83faa026619a79168c47bbc434f3941e04963eff67fb926d6750925a75f106ad",
+      "bytes": 4766,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_analyzer.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\code\\temporal_analyzer.py",
+      "verified_keep_sha256": "83faa026619a79168c47bbc434f3941e04963eff67fb926d6750925a75f106ad"
+    },
+    {
+      "source": "network_eda/temporal_dataset_analyzer.py",
+      "archive": "supporting_analyses/temporal/code/temporal_dataset_analyzer.py",
+      "sha256": "1274ef692d97a3f8b4e50941611a91291b01eedf5f6f43afc7cd5c9dff02bb6e",
+      "bytes": 989,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_dataset_analyzer.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\code\\temporal_dataset_analyzer.py",
+      "verified_keep_sha256": "1274ef692d97a3f8b4e50941611a91291b01eedf5f6f43afc7cd5c9dff02bb6e"
+    },
+    {
+      "source": "network_eda/temporal_eda.py",
+      "archive": "supporting_analyses/temporal/code/temporal_eda.py",
+      "sha256": "fd3e2645aa9a9425eb6c578ccf4623cf1fc1866a5923e6cc512b65b6a2f88171",
+      "bytes": 2270,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_eda.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\code\\temporal_eda.py",
+      "verified_keep_sha256": "fd3e2645aa9a9425eb6c578ccf4623cf1fc1866a5923e6cc512b65b6a2f88171"
+    },
+    {
+      "source": "network_eda/temporal_eda_summary_all_subreddits.csv",
+      "archive": "supporting_analyses/temporal/tables/temporal_eda_summary_all_subreddits.csv",
+      "sha256": "e19bbc54eab3f48c87efb98e108fbd9d149bd87bf0374bb7484f91232d766f94",
+      "bytes": 333548,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_eda_summary_all_subreddits.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\tables\\temporal_eda_summary_all_subreddits.csv",
+      "verified_keep_sha256": "e19bbc54eab3f48c87efb98e108fbd9d149bd87bf0374bb7484f91232d766f94"
+    },
+    {
+      "source": "network_eda/temporal_pattern_distribution.png",
+      "archive": "supporting_analyses/temporal/figures/temporal_pattern_distribution.png",
+      "sha256": "5239c4320c4d0d617358fd6c1f039ca256deaae99c16bb3e79da1cc3bab241a6",
+      "bytes": 171678,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_pattern_distribution.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\figures\\temporal_pattern_distribution.png",
+      "verified_keep_sha256": "5239c4320c4d0d617358fd6c1f039ca256deaae99c16bb3e79da1cc3bab241a6"
+    },
+    {
+      "source": "network_eda/temporal_plots.py",
+      "archive": "supporting_analyses/temporal/code/temporal_plots.py",
+      "sha256": "fb8092612220cc2f3f25385d3ec358b555da83d9816401bb19dd772dccde7e3a",
+      "bytes": 3689,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\network_eda\\temporal_plots.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\temporal\\code\\temporal_plots.py",
+      "verified_keep_sha256": "fb8092612220cc2f3f25385d3ec358b555da83d9816401bb19dd772dccde7e3a"
+    },
+    {
+      "source": "reddit_eda/build_eda_datasets.py",
+      "archive": "supporting_analyses/reciprocity_eda/code/build_eda_datasets.py",
+      "sha256": "ef78a9b5fc859c74536a3644ba2bbd4f1558ba03de59be789d62f23d610dc0d7",
+      "bytes": 675,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\build_eda_datasets.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\build_eda_datasets.py",
+      "verified_keep_sha256": "ef78a9b5fc859c74536a3644ba2bbd4f1558ba03de59be789d62f23d610dc0d7"
+    },
+    {
+      "source": "reddit_eda/eda_datasets.py",
+      "archive": "supporting_analyses/reciprocity_eda/code/eda_datasets.py",
+      "sha256": "a6e66cb8a85550c6a6516db7401755cae1260d4c4b2e6d3a46ac7fdf944ae5e2",
+      "bytes": 11181,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\eda_datasets.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\eda_datasets.py",
+      "verified_keep_sha256": "a6e66cb8a85550c6a6516db7401755cae1260d4c4b2e6d3a46ac7fdf944ae5e2"
+    },
+    {
+      "source": "reddit_eda/eda_plots.py",
+      "archive": "supporting_analyses/reciprocity_eda/code/eda_plots.py",
+      "sha256": "c43e890ea592c7954e4b619f08299e4c716e11d4bda27f1ab57058f09716044f",
+      "bytes": 7660,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\eda_plots.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\eda_plots.py",
+      "verified_keep_sha256": "c43e890ea592c7954e4b619f08299e4c716e11d4bda27f1ab57058f09716044f"
+    },
+    {
+      "source": "reddit_eda/eda_summaries.py",
+      "archive": "supporting_analyses/reciprocity_eda/code/eda_summaries.py",
+      "sha256": "ae1881f30e5e85f518319e79783157b8374ea9bac780bec4d7b310bf986c47d0",
+      "bytes": 9070,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\eda_summaries.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\eda_summaries.py",
+      "verified_keep_sha256": "ae1881f30e5e85f518319e79783157b8374ea9bac780bec4d7b310bf986c47d0"
+    },
+    {
+      "source": "reddit_eda/reddit_eda.ipynb",
+      "archive": "supporting_analyses/reciprocity_eda/code/reddit_eda.ipynb",
+      "sha256": "23acceab9ff1d69201c30d41c99ebf5cad326975c21fdae96b39eef195fb2ea9",
+      "bytes": 1443793,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\reddit_eda.ipynb",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\reddit_eda.ipynb",
+      "verified_keep_sha256": "23acceab9ff1d69201c30d41c99ebf5cad326975c21fdae96b39eef195fb2ea9"
+    },
+    {
+      "source": "reddit_eda/reply_network_analyzer.py",
+      "archive": "supporting_analyses/reciprocity_eda/code/reply_network_analyzer.py",
+      "sha256": "db42a10224d75f1d49d8d73d671e7cfd034a200db3f32d64a84f501fce478dac",
+      "bytes": 5914,
+      "role": "existing supporting analysis",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\reddit_eda\\reply_network_analyzer.py",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\code\\reply_network_analyzer.py",
+      "verified_keep_sha256": "db42a10224d75f1d49d8d73d671e7cfd034a200db3f32d64a84f501fce478dac"
+    },
+    {
+      "source": "eda_outputs/figures/descriptive_table.csv",
+      "archive": "supporting_analyses/reciprocity_eda/tables/descriptive_table.csv",
+      "sha256": "110fcbb692a0a5848e11d44923c5f862b6c043e26f58bb975029849882d84377",
+      "bytes": 383,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\descriptive_table.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\tables\\descriptive_table.csv",
+      "verified_keep_sha256": "110fcbb692a0a5848e11d44923c5f862b6c043e26f58bb975029849882d84377"
+    },
+    {
+      "source": "eda_outputs/figures/fig_reciprocity_composition.png",
+      "archive": "supporting_analyses/reciprocity_eda/figures/fig_reciprocity_composition.png",
+      "sha256": "306196cada003071a152dfbd68a7faddf0da27ec44b87251f95b4bd693eba82e",
+      "bytes": 88504,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\fig_reciprocity_composition.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\figures\\fig_reciprocity_composition.png",
+      "verified_keep_sha256": "306196cada003071a152dfbd68a7faddf0da27ec44b87251f95b4bd693eba82e"
+    },
+    {
+      "source": "eda_outputs/figures/fig_reciprocity_return.png",
+      "archive": "supporting_analyses/reciprocity_eda/figures/fig_reciprocity_return.png",
+      "sha256": "7e03b7598edbd280dcea300ac5b4faa6cbbc187569d0717d0f308348ea4add44",
+      "bytes": 90691,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\fig_reciprocity_return.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\figures\\fig_reciprocity_return.png",
+      "verified_keep_sha256": "7e03b7598edbd280dcea300ac5b4faa6cbbc187569d0717d0f308348ea4add44"
+    },
+    {
+      "source": "eda_outputs/figures/fig_subreddit_spread.png",
+      "archive": "supporting_analyses/reciprocity_eda/figures/fig_subreddit_spread.png",
+      "sha256": "71f672029a89b9197f31432823edd6d4c23b623edb39b2053047b753c98cae93",
+      "bytes": 82839,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\fig_subreddit_spread.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\figures\\fig_subreddit_spread.png",
+      "verified_keep_sha256": "71f672029a89b9197f31432823edd6d4c23b623edb39b2053047b753c98cae93"
+    },
+    {
+      "source": "eda_outputs/figures/representative_subreddits.csv",
+      "archive": "supporting_analyses/reciprocity_eda/tables/representative_subreddits.csv",
+      "sha256": "08b4dc778f7f934c3972fd14541728e16049b18753cbad3086d64b4d55451265",
+      "bytes": 522,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\representative_subreddits.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\tables\\representative_subreddits.csv",
+      "verified_keep_sha256": "08b4dc778f7f934c3972fd14541728e16049b18753cbad3086d64b4d55451265"
+    },
+    {
+      "source": "eda_outputs/figures/return_by_activity_and_reciprocity.csv",
+      "archive": "supporting_analyses/reciprocity_eda/tables/return_by_activity_and_reciprocity.csv",
+      "sha256": "844880dc6f9a6bd06829a405e8c6ce449a84e937b50da5cf4c122ffced45bd38",
+      "bytes": 691,
+      "role": "existing reciprocity EDA",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\eda_outputs\\figures\\return_by_activity_and_reciprocity.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\reciprocity_eda\\tables\\return_by_activity_and_reciprocity.csv",
+      "verified_keep_sha256": "844880dc6f9a6bd06829a405e8c6ce449a84e937b50da5cf4c122ffced45bd38"
+    },
+    {
+      "source": "logistic_resgression/pooled_logistic.ipynb",
+      "archive": "supporting_analyses/baseline/code/pooled_logistic.ipynb",
+      "sha256": "c61fc85595b0f6014eb85006390c053e77b4e5252a1a80006d4a5f7903985f44",
+      "bytes": 161227,
+      "role": "existing notebook with saved outputs",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\logistic_resgression\\pooled_logistic.ipynb",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\baseline\\code\\pooled_logistic.ipynb",
+      "verified_keep_sha256": "c61fc85595b0f6014eb85006390c053e77b4e5252a1a80006d4a5f7903985f44"
+    },
+    {
+      "source": "logistic_resgression/subreddit_logistic.ipynb",
+      "archive": "supporting_analyses/community_models/code/subreddit_logistic.ipynb",
+      "sha256": "a6aebdb71e0ce5facc7af708adbc073ca7e9423e95b9f8f50a446428b9d5245b",
+      "bytes": 63539,
+      "role": "existing notebook with saved outputs",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\logistic_resgression\\subreddit_logistic.ipynb",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\community_models\\code\\subreddit_logistic.ipynb",
+      "verified_keep_sha256": "a6aebdb71e0ce5facc7af708adbc073ca7e9423e95b9f8f50a446428b9d5245b"
+    },
+    {
+      "source": "logistic_resgression/results/subreddit_logistic_results.csv",
+      "archive": "supporting_analyses/community_models/tables/subreddit_logistic_results.csv",
+      "sha256": "88fdd3b03c1c1401aadef1d8fb5ef4a1e0015736e26aa78d86a9540558194800",
+      "bytes": 335219,
+      "role": "completed community models",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\logistic_resgression\\results\\subreddit_logistic_results.csv",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\community_models\\tables\\subreddit_logistic_results.csv",
+      "verified_keep_sha256": "88fdd3b03c1c1401aadef1d8fb5ef4a1e0015736e26aa78d86a9540558194800"
+    },
+    {
+      "source": "logistic_resgression/results/subreddit_adjusted_differences.png",
+      "archive": "supporting_analyses/community_models/figures/subreddit_adjusted_differences.png",
+      "sha256": "a86d4725e513c68ad12e73fda7e5c17f8d5fbaa7fabf61d740883266beccde15",
+      "bytes": 59089,
+      "role": "completed community models",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\logistic_resgression\\results\\subreddit_adjusted_differences.png",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\supporting_analyses\\community_models\\figures\\subreddit_adjusted_differences.png",
+      "verified_keep_sha256": "a86d4725e513c68ad12e73fda7e5c17f8d5fbaa7fabf61d740883266beccde15"
+    },
+    {
+      "source": "readme.md",
+      "archive": "reproducibility/project_readme_snapshot.md",
+      "sha256": "2b3b7b08f7a539c516985b1fae83acba71c673275eeb62648c3d73d086a88559",
+      "bytes": 12675,
+      "role": "project documentation at packaging time",
+      "keep": "C:\\Users\\tahai\\Desktop\\EMM-Project\\readme.md",
+      "remove": "C:\\Users\\tahai\\Desktop\\EMM-Project\\experiments\\reproducibility\\project_readme_snapshot.md",
+      "verified_keep_sha256": "2b3b7b08f7a539c516985b1fae83acba71c673275eeb62648c3d73d086a88559"
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+--- before/report_top_subgroups.py
++++ experiments/M_reference_discovery/code/added/report_top_subgroups.py
+@@ -1,18 +1,24 @@
+ """Report the saved beam-search results without refitting any models.
+ 
+ Run from the project directory:
+-    python beam_search/report_top_subgroups.py
++    python experiments/M_reference_discovery/code/added/report_top_subgroups.py
+ """
+ 
+ from pathlib import Path
++import sys
+ import re
++
++# Import the shared paths from this project's experiments directory.
++EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
++sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
++from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
+ 
+ import pandas as pd
+ 
+ 
+-BASE_DIR = Path(__file__).resolve().parent
++BASE_DIR = ORIGINAL_SEARCH
+ SOURCE = BASE_DIR / "emm_beam_search_results.csv"
+-OUTPUT_DIR = BASE_DIR / "results"
++OUTPUT_DIR = M
+ 
+ TOP_K = 10  # Reporting cutoff, independent of the search's beam width.
+ TOTAL_OBSERVATIONS = 36_031_393  # Full-data run; see pooled_logistic.ipynb.
+@@ -41,7 +47,7 @@
+     top["signed_delta"] = top["beta"] - top["reference_beta"]
+     # Preserve the original delta column, which is an ABSOLUTE difference.
+ 
+-    ame_path = OUTPUT_DIR / "ame" / "top_10_ame_comparison.csv"
++    ame_path = output_path(A3, "top_10_ame_comparison.csv")
+     has_ames = ame_path.exists()
+     if has_ames:
+         ames = pd.read_csv(ame_path).set_index("description")
+@@ -86,16 +92,15 @@
+         notes += (
+             f"\nReference AME: {top['reference_ame_pp'].iloc[0]:.4f} percentage points."
+             "\nAME is the average discrete change from reciprocity 0 to 1 within each fitted population."
+-            "\nAMEs are point estimates; see results/ame/a3_report.txt for scale comparisons."
++            "\nAMEs are point estimates; see experiments/A3_probability_scale/reports/a3_report.txt for scale comparisons."
+         )
+     else:
+         notes += " AMEs are not yet included."
+ 
+     OUTPUT_DIR.mkdir(exist_ok=True)
+-    stem = OUTPUT_DIR / f"top_{TOP_K}_subgroups"
+-    top.to_csv(stem.with_suffix(".csv"), index=False)
++    top.to_csv(output_path(OUTPUT_DIR, f"top_{TOP_K}_subgroups.csv"), index=False)
+     report = table.to_string(index=False) + "\n\n" + notes + "\n"
+-    stem.with_suffix(".txt").write_text(report, encoding="utf-8")
++    output_path(OUTPUT_DIR, f"top_{TOP_K}_subgroups.txt").write_text(report, encoding="utf-8")
+ 
+     # This table spans both columns in a two-column paper (requires booktabs).
+     latex = (
+@@ -114,7 +119,7 @@
+            if has_ames else "")
+         + "\n\\end{minipage}\n\\end{table*}\n"
+     )
+-    stem.with_suffix(".tex").write_text(latex, encoding="utf-8")
++    output_path(OUTPUT_DIR, f"top_{TOP_K}_subgroups.tex").write_text(latex, encoding="utf-8")
+     print(report)
+     print(f"Saved CSV, text, and LaTeX reports in {OUTPUT_DIR}")
+ 
+--- before/run_reciprocity_comparison.py
++++ experiments/A1_reciprocity_measure/code/run_reciprocity_comparison.py
+@@ -1,6 +1,6 @@
+ """A1: repeat M with proportional reciprocity and compare the top-k lists.
+ 
+-Run: python beam_search/run_reciprocity_comparison.py
++Run: python experiments/A1_reciprocity_measure/code/run_reciprocity_comparison.py
+ Uses the original beam-search expansion/pruning code and fixed M thresholds.
+ The original binary results are read only. Fits are checkpointed for resumption.
+ """
+@@ -21,6 +21,13 @@
+     os.environ[variable] = "1"
+ os.environ["NUMBA_THREADING_LAYER"] = "workqueue"
+ 
++# Import the shared paths from this project's experiments directory.
++EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
++sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
++from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
++sys.path.insert(0, str(M / "code" / "added"))
++sys.path.insert(0, str(ORIGINAL_SEARCH))
++
+ import numpy as np
+ import pandas as pd
+ 
+@@ -28,11 +35,11 @@
+ from emm_selectors import Selector
+ from report_top_subgroups import readable_description
+ 
+-BASE = Path(__file__).resolve().parent
++BASE = ORIGINAL_SEARCH
+ DATA = BASE.parent / "eda_outputs" / "reciprocity_return.csv"
+ BINARY = BASE / "emm_beam_search_results.csv"
+-OUT = BASE / "results" / "reciprocity_comparison"
+-CACHE = OUT / "data_cache"
++OUT = A1
++CACHE = output_path(OUT, "data_cache")
+ PARQUET = CACHE / "prepared.parquet"
+ TARGET = "proportional_reciprocity"
+ FORMULA = f"returned_next_month ~ {TARGET} + log_sent + log_received | month + subreddit"
+@@ -67,6 +74,7 @@
+ def run_signature():
+     record = {**cache_metadata(), "binary_sha256": hashlib.sha256(BINARY.read_bytes()).hexdigest(),
+               "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
++              "path_helper_sha256": hashlib.sha256((EXPERIMENTS_DIR / "code" / "experiment_paths.py").read_bytes()).hexdigest(),
+               "search_sha256": hashlib.sha256((BASE / "beam_search.py").read_bytes()).hexdigest(),
+               "pyfixest": importlib.metadata.version("pyfixest"),
+               "formula": FORMULA, "settings": SETTINGS, "thresholds": THRESHOLDS}
+@@ -108,13 +116,13 @@
+     df["log_received"] = np.log1p(df["replies_received"].astype("float64"))
+     df.to_parquet(PARQUET, index=False, compression="snappy")
+     write_json(CACHE / "metadata.json", cache_metadata())
+-    write_json(OUT / "data_audit.json", audit)
++    write_json(output_path(OUT, "data_audit.json"), audit)
+     print(f"Prepared {len(df):,} observations; all definitions and thresholds verified", flush=True)
+ 
+ 
+ def fit_path(description):
+     key = hashlib.sha256(canonical(description).encode()).hexdigest()[:16]
+-    return OUT / "fits" / f"{key}.json"
++    return output_path(OUT, "fits") / f"{key}.json"
+ 
+ 
+ def fit_worker(description):
+@@ -269,10 +277,10 @@
+     comparison = shared_all.loc[shared_all["key"].isin(union)].copy()
+     comparison["in_binary_top_10"] = comparison["key"].isin(left_keys)
+     comparison["in_proportional_top_10"] = comparison["key"].isin(right_keys)
+-    left.head(TOP_K).to_csv(OUT / "binary_top_10.csv", index=False)
+-    right.head(TOP_K).to_csv(OUT / "proportional_top_10.csv", index=False)
+-    shared_all.to_csv(OUT / "all_shared_subgroups.csv", index=False)
+-    comparison.to_csv(OUT / "top_10_comparison.csv", index=False)
++    left.head(TOP_K).to_csv(output_path(OUT, "binary_top_10.csv"), index=False)
++    right.head(TOP_K).to_csv(output_path(OUT, "proportional_top_10.csv"), index=False)
++    shared_all.to_csv(output_path(OUT, "all_shared_subgroups.csv"), index=False)
++    comparison.to_csv(output_path(OUT, "top_10_comparison.csv"), index=False)
+     summary = {
+         "comparison": "binary versus proportional reciprocity", "top_k": TOP_K,
+         "binary_valid_subgroups": len(left), "proportional_valid_subgroups": len(right),
+@@ -292,7 +300,7 @@
+         "same_sample_and_search_settings": True,
+         "proportional_subgroups_with_separation_exclusions": int((proportional["excluded_for_separation"] > 0).sum()),
+     }
+-    write_json(OUT / "summary.json", summary)
++    write_json(output_path(OUT, "summary.json"), summary)
+     top_table = pd.DataFrame({
+         "Rank": right.head(TOP_K)["quality_rank"],
+         "Subgroup": right.head(TOP_K)["description"].map(readable_description),
+@@ -333,7 +341,7 @@
+         "Source: saved binary M results and the full reciprocity_return.csv analysis dataset.\n"
+         "The weighted-reciprocity search is not part of this binary/proportional comparison.\n"
+     )
+-    (OUT / "a1_report.txt").write_text(report, encoding="utf-8")
++    (output_path(OUT, "a1_report.txt")).write_text(report, encoding="utf-8")
+     for name, table, caption in (("proportional_top_10", top_table, "Top ten subgroups using proportional reciprocity."),
+                                  ("a1_comparison", comparison_table, "Binary and proportional reciprocity: subgroups in either top-ten list.")):
+         latex = "\\begin{table*}[t]\n\\centering\n\\small\n\\setlength{\\tabcolsep}{3pt}\n"
+@@ -342,7 +350,7 @@
+         latex += "Ranks use the original size-weighted quality. Signed differences use each measure's own global reference. "
+         latex += "Coefficients are on the log-odds scale and represent different reciprocity contrasts. "
+         latex += "Standard errors are clustered by user. Subgroups overlap.\n\\end{minipage}\n\\end{table*}\n"
+-        (OUT / f"{name}.tex").write_text(latex, encoding="utf-8")
++        (output_path(OUT, f"{name}.tex")).write_text(latex, encoding="utf-8")
+     print(report, flush=True)
+ 
+ 
+@@ -352,7 +360,7 @@
+     parser.add_argument("--worker", help=argparse.SUPPRESS)
+     args = parser.parse_args()
+     CACHE.mkdir(parents=True, exist_ok=True)
+-    (OUT / "fits").mkdir(exist_ok=True)
++    (output_path(OUT, "fits")).mkdir(exist_ok=True)
+     if args.prepare:
+         prepare_cache()
+         return
+@@ -364,8 +372,8 @@
+         subprocess.run([sys.executable, "-u", str(Path(__file__).resolve()), "--prepare"], check=True)
+     search = CheckpointedSearch()
+     proportional = search.search()
+-    proportional.to_csv(OUT / "proportional_beam_search_results.csv", index=False)
+-    write_json(OUT / "search_audit.json", {
++    proportional.to_csv(output_path(OUT, "proportional_beam_search_results.csv"), index=False)
++    write_json(output_path(OUT, "search_audit.json"), {
+         "signature": search.signature, "settings": SETTINGS, "thresholds": THRESHOLDS,
+         "reference": search.reference_result,
+         "attempted_subgroups": len(search.records) - 1, "valid_subgroups": len(proportional),
+--- before/audit_repeated_replies.py
++++ experiments/A1_reciprocity_measure/code/audit_repeated_replies.py
+@@ -3,11 +3,17 @@
+ import hashlib
+ import json
+ from pathlib import Path
++import sys
+ import time
+ 
+-BASE = Path(__file__).resolve().parent
++# Import the shared paths from this project's experiments directory.
++EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
++sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
++from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
++
++BASE = ORIGINAL_SEARCH
+ RAW = BASE.parent / "reply_networks"
+-OUT = BASE / "results" / "reciprocity_comparison" / "weighted_feasibility.json"
++OUT = output_path(A1, "weighted_feasibility.json")
+ 
+ 
+ def main():
+--- before/run_dependence_analysis.py
++++ experiments/A2_user_dependence/code/run_dependence_analysis.py
+@@ -1,7 +1,7 @@
+ """A2: ordinary versus user-clustered inference for M's fixed top ten.
+ 
+-Run: python beam_search/run_dependence_analysis.py
+-Reads existing inputs; writes only results/dependence/. Original code is unchanged.
++Run: python experiments/A2_user_dependence/code/run_dependence_analysis.py
++Reads existing inputs; writes only experiments/A2_user_dependence/. Original code is unchanged.
+ Uses the validated A1 parquet cache. Each model runs in a fresh process.
+ """
+ 
+@@ -21,16 +21,20 @@
+     os.environ[variable] = "1"
+ os.environ["NUMBA_THREADING_LAYER"] = "workqueue"
+ 
++# Import the shared paths from this project's experiments directory.
++EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
++sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
++from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
++
+ import numpy as np
+ import pandas as pd
+ 
+-BASE = Path(__file__).resolve().parent
++BASE = ORIGINAL_SEARCH
+ ROOT = BASE.parent
+ SOURCE = BASE / "emm_beam_search_results.csv"
+ DATA = ROOT / "eda_outputs" / "reciprocity_return.csv"
+-A1 = BASE / "results" / "reciprocity_comparison"
+ CACHE = A1 / "data_cache" / "prepared.parquet"
+-OUT = BASE / "results" / "dependence"
++OUT = A2
+ FORMULA = "returned_next_month ~ recip_binary + log_sent + log_received | month + subreddit"
+ TOP_K = 10
+ N = 36_031_393
+@@ -51,7 +55,7 @@
+                 "total_observations": N, "cache_format_version": 1}
+     if not CACHE.exists() or json.loads(CACHE.with_name("metadata.json").read_text()) != expected:
+         raise ValueError("Missing or stale A1 cache; run run_reciprocity_comparison.py first")
+-    audit = json.loads((A1 / "data_audit.json").read_text())
++    audit = json.loads(output_path(A1, "data_audit.json").read_text())
+     if not audit["definition_verified_all_rows"]:
+         raise ValueError("Reciprocity definition has not been verified")
+     return expected
+@@ -60,6 +64,7 @@
+ def signature():
+     record = {**validate_cache(), "source_sha256": hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+               "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
++              "path_helper_sha256": hashlib.sha256((EXPERIMENTS_DIR / "code" / "experiment_paths.py").read_bytes()).hexdigest(),
+               "cache_size": CACHE.stat().st_size, "cache_mtime_ns": CACHE.stat().st_mtime_ns,
+               "pyfixest": importlib.metadata.version("pyfixest"), "formula": FORMULA, "top_k": TOP_K}
+     return hashlib.sha256(json.dumps(record, sort_keys=True).encode()).hexdigest()
+@@ -144,13 +149,13 @@
+               "saved_quality": None if row is None else float(row["quality"]),
+               "ordinary": ordinary, "clustered": clustered,
+               "elapsed_seconds": time.monotonic() - started}
+-    write_json(OUT / f"fit_{key}.json", record)
++    write_json(output_path(OUT, f"fit_{key}.json"), record)
+     print(f"[{key}] Complete: SE ordinary={ordinary['se']:.6f}, clustered={clustered['se']:.6f}, "
+           f"ratio={clustered['se']/ordinary['se']:.3f}; {record['elapsed_seconds']:.0f}s", flush=True)
+ 
+ 
+ def build_report(run_signature):
+-    records = [json.loads((OUT / f"fit_{key}.json").read_text())
++    records = [json.loads((output_path(OUT, f"fit_{key}.json")).read_text())
+                for key in ["reference"] + [str(i) for i in range(1, TOP_K + 1)]]
+     if any(r["signature"] != run_signature for r in records):
+         raise ValueError("Checkpoint signature mismatch")
+@@ -199,8 +204,8 @@
+         "inference": "Ordinary model-based iid versus user-clustered CRV1, with pyfixest default small-sample corrections.",
+         "limitation": "CI exclusion of the reference point is descriptive, not a formal test of subgroup-reference difference. The reference is estimated and overlaps each subgroup; joint covariance and post-selection adjustment are not estimated.",
+     }
+-    comparison.to_csv(OUT / "a2_comparison.csv", index=False)
+-    write_json(OUT / "summary.json", summary)
++    comparison.to_csv(output_path(OUT, "a2_comparison.csv"), index=False)
++    write_json(output_path(OUT, "summary.json"), summary)
+     table = pd.DataFrame({
+         "M rank": ["Ref"] + list(range(1, TOP_K + 1)),
+         "Subgroup": comparison["description"].str.replace("replies_sent", "Sent").str.replace("replies_received", "Received").str.replace(".0", "", regex=False),
+@@ -228,12 +233,12 @@
+         "These are pointwise 95% coefficient CIs; p-values test beta=0, not beta=reference_beta.\n"
+         + summary["limitation"] + "\n"
+         "Use clustered uncertainty for interpretation. These associations are descriptive, not causal.\n\n"
+-        "Run: python beam_search/run_dependence_analysis.py\n"
+-        "Completed fits are checkpointed. Inputs are read only; output is confined to beam_search/results/dependence/.\n"
++        "Run: python experiments/A2_user_dependence/code/run_dependence_analysis.py\n"
++        "Completed fits are checkpointed. Inputs are read only; output is confined to experiments/A2_user_dependence/.\n"
+         "The validated A1 parquet cache is required. Binary reciprocity is recovered as proportional reciprocity > 0.\n"
+         "Each likelihood is fitted once with clustered inference; pyfixest.vcov('iid') recalculates ordinary inference on the same fit.\n"
+     )
+-    (OUT / "a2_report.txt").write_text(notes, encoding="utf-8")
++    (output_path(OUT, "a2_report.txt")).write_text(notes, encoding="utf-8")
+     print(notes, flush=True)
+ 
+ 
+@@ -253,10 +258,10 @@
+         fit_one(args.fit_key, run_signature)
+         return
+     before = protected_files()
+-    write_json(OUT / "protected_files_before.json", before)
++    write_json(output_path(OUT, "protected_files_before.json"), before)
+     try:
+         for key in [str(i) for i in range(1, TOP_K + 1)] + ["reference"]:
+-            checkpoint = OUT / f"fit_{key}.json"
++            checkpoint = output_path(OUT, f"fit_{key}.json")
+             if checkpoint.exists() and json.loads(checkpoint.read_text()).get("signature") == run_signature:
+                 print(f"[{key}] Using completed checkpoint", flush=True)
+                 continue
+@@ -265,7 +270,7 @@
+     finally:
+         after = protected_files()
+         changed = [name for name in set(before) | set(after) if before.get(name) != after.get(name)]
+-        write_json(OUT / "source_integrity.json", {"unchanged": not changed, "changed_files": changed, "before": before, "after": after})
++        write_json(output_path(OUT, "source_integrity.json"), {"unchanged": not changed, "changed_files": changed, "before": before, "after": after})
+         if changed:
+             raise RuntimeError(f"Protected files changed during A2: {changed}")
+ 
+--- before/run_ame_analysis.py
++++ experiments/A3_probability_scale/code/run_ame_analysis.py
+@@ -1,6 +1,6 @@
+ """Refit M's fixed top-k subgroups and compare coefficient and AME differences.
+ 
+-Run: python beam_search/run_ame_analysis.py
++Run: python experiments/A3_probability_scale/code/run_ame_analysis.py
+ Completed fits are checkpointed; rerunning resumes the same analysis.
+ For binary reciprocity, AME means the average discrete change from 0 to 1.
+ """
+@@ -21,6 +21,12 @@
+     os.environ[variable] = "1"
+ os.environ["NUMBA_THREADING_LAYER"] = "workqueue"
+ 
++# Import the shared paths from this project's experiments directory.
++EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
++sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
++from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
++sys.path.insert(0, str(M / "code" / "added"))
++
+ import numpy as np
+ import pandas as pd
+ from scipy.special import expit
+@@ -28,9 +34,9 @@
+ 
+ from report_top_subgroups import SOURCE, TOTAL_OBSERVATIONS, TOP_K, readable_description
+ 
+-BASE_DIR = Path(__file__).resolve().parent
++BASE_DIR = ORIGINAL_SEARCH
+ DATA = BASE_DIR.parent / "eda_outputs" / "reciprocity_return.csv"
+-OUT = BASE_DIR / "results" / "ame"
++OUT = A3
+ FORMULA = "returned_next_month ~ recip_binary + log_sent + log_received | month + subreddit"
+ 
+ 
+@@ -46,6 +52,7 @@
+         "data_size": DATA.stat().st_size,
+         "data_mtime_ns": DATA.stat().st_mtime_ns,
+         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
++              "path_helper_sha256": hashlib.sha256((EXPERIMENTS_DIR / "code" / "experiment_paths.py").read_bytes()).hexdigest(),
+         "pyfixest": importlib.metadata.version("pyfixest"),
+         "top_k": TOP_K,
+         "total_observations": TOTAL_OBSERVATIONS,
+@@ -131,7 +138,7 @@
+         "beta_difference_from_saved": beta - expected_beta, "ame": ame, "ame_pp": 100 * ame,
+         "converged": bool(model.convergence), "elapsed_seconds": time.monotonic() - started,
+     }
+-    path = OUT / f"fit_{key}.json"
++    path = output_path(OUT, f"fit_{key}.json")
+     temporary = path.with_suffix(".tmp")
+     temporary.write_text(json.dumps(result, indent=2), encoding="utf-8")
+     temporary.replace(path)
+@@ -139,10 +146,10 @@
+ 
+ 
+ def build_report():
+-    reference = json.loads((OUT / "fit_reference.json").read_text())
++    reference = json.loads((output_path(OUT, "fit_reference.json")).read_text())
+     result = selected_results().reset_index(drop=True)
+     result.insert(0, "quality_rank", range(1, len(result) + 1))
+-    fits = [json.loads((OUT / f"fit_{i}.json").read_text()) for i in result["quality_rank"]]
++    fits = [json.loads((output_path(OUT, f"fit_{i}.json")).read_text()) for i in result["quality_rank"]]
+     result["refit_beta"] = [r["beta"] for r in fits]
+     result["ame_pp"] = [r["ame_pp"] for r in fits]
+     result["reference_ame_pp"] = reference["ame_pp"]
+@@ -166,8 +173,8 @@
+         "definition": "Mean discrete change p(R=1,X)-p(R=0,X), averaged within each fitted population.",
+         "scope": "Fixed top-k from M, not a new search. AME point estimates only; no AME confidence intervals.",
+     }
+-    result.to_csv(OUT / "top_10_ame_comparison.csv", index=False)
+-    (OUT / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
++    result.to_csv(output_path(OUT, "top_10_ame_comparison.csv"), index=False)
++    (output_path(OUT, "summary.json")).write_text(json.dumps(summary, indent=2), encoding="utf-8")
+     table = pd.DataFrame({
+         "M rank": result["quality_rank"], "Subgroup": result["description"].map(readable_description),
+         "Beta": result["beta"].map(lambda x: f"{x:.3f}"),
+@@ -194,7 +201,7 @@
+         "Source: beam_search/emm_beam_search_results.csv and eda_outputs/reciprocity_return.csv."
+     )
+     report = table.to_string(index=False) + "\n\n" + notes + "\n"
+-    (OUT / "a3_report.txt").write_text(report, encoding="utf-8")
++    (output_path(OUT, "a3_report.txt")).write_text(report, encoding="utf-8")
+     latex = "\\begin{table*}[t]\n\\centering\n\\small\n"
+     latex += "\\caption{Coefficient and probability-scale differences for the top ten subgroups from M.}\n"
+     latex += "\\label{tab:ame-comparison}\n" + table.to_latex(index=False, escape=True)
+@@ -204,7 +211,7 @@
+     latex += "Beta and AME ranks use absolute differences from the reference, without size weighting. "
+     latex += "Direction agreement compares signed differences. Subgroups overlap. AME uncertainty is not estimated.\n"
+     latex += "\\end{minipage}\n\\end{table*}\n"
+-    (OUT / "a3_table.tex").write_text(latex, encoding="utf-8")
++    (output_path(OUT, "a3_table.tex")).write_text(latex, encoding="utf-8")
+     print(report, flush=True)
+ 
+ 
+@@ -219,7 +226,7 @@
+         return
+     # Separate processes release each model's memory before the next fit.
+     for key in [str(i) for i in range(1, TOP_K + 1)] + ["reference"]:
+-        checkpoint = OUT / f"fit_{key}.json"
++        checkpoint = output_path(OUT, f"fit_{key}.json")
+         if checkpoint.exists() and json.loads(checkpoint.read_text()).get("signature") == run_signature:
+             print(f"[{key}] Using completed checkpoint", flush=True)
+             continue

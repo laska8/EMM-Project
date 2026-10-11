@@ -1,0 +1,30 @@
+{
+  "signature": "31d88973b41bf5a6638a17fec1dce82151c2c10e0e7feb0d06e3ff2982a02651",
+  "description": "replies_received>3 AND replies_sent<=3",
+  "n": 2118627,
+  "return_rate": 0.43746822824404674,
+  "status": "ok",
+  "converged": true,
+  "fitted_rows": 2118623,
+  "excluded_for_separation": 4,
+  "beta": -0.4489592157869657,
+  "se": 0.003944853707054476,
+  "ci_low": -0.4566909869770718,
+  "ci_high": -0.4412274445968596,
+  "p_value": 0.0,
+  "user_clusters": 885960,
+  "separation_audit": {
+    "same_excluded_rows_as_binary": true,
+    "excluded_row_positions": [
+      268667,
+      2084896,
+      2084897,
+      2084898
+    ],
+    "binary_refit_beta": -0.3039250991996473,
+    "binary_refit_se": 0.0037698947195405866,
+    "binary_fitted_rows": 2118623
+  },
+  "elapsed_seconds": 61.26599999999962,
+  "relocation_from_signature": "b44ff196a0008fcaccc702f71d2d4274784d5d9358925eec9a4823e1a8c159cf"
+}

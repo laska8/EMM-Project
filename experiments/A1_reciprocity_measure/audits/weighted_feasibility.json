@@ -1,0 +1,14 @@
+{
+  "scope": "All supplied raw subreddit JSON files, all available monthly networks",
+  "files_checked": 2046,
+  "months_checked": 22506,
+  "outgoing_lists_checked": 40050308,
+  "reply_entries_checked": 136829959,
+  "lists_with_repeated_targets": 0,
+  "repeated_target_entries": 0,
+  "repeated_replies_detected": false,
+  "weighted_measure_implemented": false,
+  "conclusion": "No repeated targets occur within any user-month outgoing list. The supplied adjacency lists do not provide repeated-reply intensity for a distinct weighted-reciprocity experiment. This does not establish that real users never replied repeatedly.",
+  "raw_file_manifest_sha256": "13ad61bb3b54773809db8504823b77392fca5b391bde0e2d9c7fec8a9f1349de",
+  "elapsed_seconds": 106.65600000000086
+}

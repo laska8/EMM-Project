@@ -1,0 +1,19 @@
+{
+  "signature": "31d88973b41bf5a6638a17fec1dce82151c2c10e0e7feb0d06e3ff2982a02651",
+  "description": "replies_received>0 AND replies_sent>3",
+  "n": 6871536,
+  "return_rate": 0.7144964386419572,
+  "status": "ok",
+  "converged": true,
+  "fitted_rows": 6871536,
+  "beta": -1.3392207125787683,
+  "se": 0.0056962034251313125,
+  "ci_low": -1.3503850661406394,
+  "ci_high": -1.3280563590168972,
+  "p_value": 0.0,
+  "user_clusters": 1217588,
+  "elapsed_seconds": 43.71899999999914,
+  "prior_signature": "ff9e68c4266b7a97469a03237bbcd6a5d9dd5afec8cbed78cedb10f31ca4ffd2",
+  "excluded_for_separation": 0,
+  "relocation_from_signature": "b44ff196a0008fcaccc702f71d2d4274784d5d9358925eec9a4823e1a8c159cf"
+}

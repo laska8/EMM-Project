@@ -1,0 +1,29 @@
+{
+  "original_code_files_checked": 19,
+  "canonical_files_checked": 128,
+  "all_original_code_unchanged": true,
+  "all_canonical_files_unchanged_during_report_build": true,
+  "changed_code": [],
+  "changed_sources": [],
+  "original_code_sha256": {
+    "beam_search/beam_search.py": "dbfcaaa078b1b51a405657c0b94936922a922737e10803964555e660e633c807",
+    "beam_search/emm_selectors.py": "231e7309554e2693ced0fe5427da52a06a64771605147ea4f42531bfcaa8242a",
+    "beam_search/logistic_model.py": "a197c0e1f44f6155caba53063b645df390cecf5a559b5fcca907a0b39c80cd11",
+    "beam_search/run_beam_search.py": "c905feaedbb037378cb7131a438f79064ad668c3513c0c3e93263d597d311933",
+    "logistic_resgression/pooled_logistic.ipynb": "c61fc85595b0f6014eb85006390c053e77b4e5252a1a80006d4a5f7903985f44",
+    "logistic_resgression/repair.ipynb": "5dfd25cc0dcce0aa57051bd8d338ac1fe8a6dd342b52c31d6478b288d89d7cd0",
+    "logistic_resgression/subreddit_logistic.ipynb": "a6aebdb71e0ce5facc7af708adbc073ca7e9423e95b9f8f50a446428b9d5245b",
+    "logistic_resgression/.ipynb_checkpoints/pooled_logistic-checkpoint.ipynb": "c61fc85595b0f6014eb85006390c053e77b4e5252a1a80006d4a5f7903985f44",
+    "network_eda/plot_temporal_results.py": "660ecd419f3f1bd6ba404fc0c34d49933e45cb6070a27253d85a2d2617435b2f",
+    "network_eda/temporal_analyzer.py": "83faa026619a79168c47bbc434f3941e04963eff67fb926d6750925a75f106ad",
+    "network_eda/temporal_dataset_analyzer.py": "1274ef692d97a3f8b4e50941611a91291b01eedf5f6f43afc7cd5c9dff02bb6e",
+    "network_eda/temporal_eda.py": "fd3e2645aa9a9425eb6c578ccf4623cf1fc1866a5923e6cc512b65b6a2f88171",
+    "network_eda/temporal_plots.py": "fb8092612220cc2f3f25385d3ec358b555da83d9816401bb19dd772dccde7e3a",
+    "reddit_eda/build_eda_datasets.py": "ef78a9b5fc859c74536a3644ba2bbd4f1558ba03de59be789d62f23d610dc0d7",
+    "reddit_eda/eda_datasets.py": "a6e66cb8a85550c6a6516db7401755cae1260d4c4b2e6d3a46ac7fdf944ae5e2",
+    "reddit_eda/eda_plots.py": "c43e890ea592c7954e4b619f08299e4c716e11d4bda27f1ab57058f09716044f",
+    "reddit_eda/eda_summaries.py": "ae1881f30e5e85f518319e79783157b8374ea9bac780bec4d7b310bf986c47d0",
+    "reddit_eda/reddit_eda.ipynb": "23acceab9ff1d69201c30d41c99ebf5cad326975c21fdae96b39eef195fb2ea9",
+    "reddit_eda/reply_network_analyzer.py": "db42a10224d75f1d49d8d73d671e7cfd034a200db3f32d64a84f501fce478dac"
+  }
+}

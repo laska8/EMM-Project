@@ -1,0 +1,23 @@
+{
+  "reason": "Only filesystem paths, output routing, imports, usage text and signature provenance changed. No model formulas, samples, estimates or covariance settings changed. Original signatures were verified before relocation.",
+  "migrations": [
+    {
+      "experiment": "A1_reciprocity_measure",
+      "old_signature": "b44ff196a0008fcaccc702f71d2d4274784d5d9358925eec9a4823e1a8c159cf",
+      "new_signature": "31d88973b41bf5a6638a17fec1dce82151c2c10e0e7feb0d06e3ff2982a02651",
+      "checkpoints": 35
+    },
+    {
+      "experiment": "A2_user_dependence",
+      "old_signature": "d72ea3e535d8cfb899c2eeeec3e7caafcc7ce283bcfca56c508dc5d5b9460d43",
+      "new_signature": "8a792c1d2e459d361124d3bfca6c67ced9828e0f0b9b7a0aecbc6bb13f7eac73",
+      "checkpoints": 11
+    },
+    {
+      "experiment": "A3_probability_scale",
+      "old_signature": "3ab5eaccf25aba1ee816acaddeae96e182048854fef176d1915eb08fdb01156e",
+      "new_signature": "e84fa256c17fcb18dd411d24c3f8723df3a111d83b599230201a04db44f1137a",
+      "checkpoints": 11
+    }
+  ]
+}

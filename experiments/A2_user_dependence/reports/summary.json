@@ -1,0 +1,22 @@
+{
+  "top_k": 10,
+  "models": 11,
+  "all_converged": true,
+  "all_coefficients_unchanged": true,
+  "all_coefficients_negative": true,
+  "reference_se_ratio": 1.1306634915028269,
+  "subgroup_se_ratio_min": 1.021476634977188,
+  "subgroup_se_ratio_median": 1.0592878975096287,
+  "subgroup_se_ratio_max": 1.1079482961046367,
+  "subgroups_with_larger_clustered_se": 10,
+  "ordinary_subgroup_cis_exclude_zero": 10,
+  "clustered_subgroup_cis_exclude_zero": 10,
+  "ordinary_subgroup_cis_exclude_reference_point": 10,
+  "clustered_subgroup_cis_exclude_reference_point": 10,
+  "reference_point_diagnostic_changed_count": 0,
+  "max_abs_beta_difference_from_saved": 2.3046564656681312e-12,
+  "quality_ranking_unchanged": true,
+  "scope": "Fixed binary top ten and global reference, same controls and months 1-10; no new search.",
+  "inference": "Ordinary model-based iid versus user-clustered CRV1, with pyfixest default small-sample corrections.",
+  "limitation": "CI exclusion of the reference point is descriptive, not a formal test of subgroup-reference difference. The reference is estimated and overlaps each subgroup; joint covariance and post-selection adjustment are not estimated."
+}

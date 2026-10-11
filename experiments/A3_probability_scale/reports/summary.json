@@ -1,0 +1,14 @@
+{
+  "top_k": 10,
+  "reference_beta": -0.24126689863633557,
+  "reference_ame_pp": -4.436578532263658,
+  "spearman_abs_difference_ranks": 0.3696969696969697,
+  "difference_direction_agreement_count": 10,
+  "difference_direction_agreement_pct": 100.0,
+  "effect_sign_agreement_count": 10,
+  "ame_pp_min": -9.010911906958771,
+  "ame_pp_max": -5.586748458562072,
+  "max_abs_beta_refit_difference": 3.4475200472172673e-12,
+  "definition": "Mean discrete change p(R=1,X)-p(R=0,X), averaged within each fitted population.",
+  "scope": "Fixed top-k from M, not a new search. AME point estimates only; no AME confidence intervals."
+}

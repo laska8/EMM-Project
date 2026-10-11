@@ -1,0 +1,44 @@
+[1] Using completed checkpoint
+[2] Using completed checkpoint
+[3] Using completed checkpoint
+[4] Using completed checkpoint
+[5] Using completed checkpoint
+[6] Using completed checkpoint
+[7] Using completed checkpoint
+[8] Using completed checkpoint
+[9] Using completed checkpoint
+[10] Using completed checkpoint
+[reference] Using completed checkpoint
+A2: DEPENDENCE BETWEEN OBSERVATIONS
+
+M rank                Subgroup    Beta Ordinary SE Clustered SE SE ratio    Ordinary 95% CI   Clustered 95% CI
+   Ref               reference -0.2413    0.001014     0.001146     1.13 [-0.2433, -0.2393] [-0.2435, -0.2390]
+     1   Sent>3 AND Received>3 -0.5223    0.007484     0.007645     1.02 [-0.5370, -0.5077] [-0.5373, -0.5074]
+     2   Sent>1 AND Received>1 -0.4285    0.002310     0.002435     1.05 [-0.4330, -0.4240] [-0.4333, -0.4237]
+     3   Sent>3 AND Received>1 -0.4873    0.004860     0.005036     1.04 [-0.4968, -0.4777] [-0.4971, -0.4774]
+     4   Sent>1 AND Received>0 -0.3999    0.001717     0.001847     1.08 [-0.4033, -0.3966] [-0.4035, -0.3963]
+     5   Sent>3 AND Received>0 -0.4418    0.003967     0.004166     1.05 [-0.4495, -0.4340] [-0.4499, -0.4336]
+     6  Sent>1 AND Received<=3 -0.3979    0.001842     0.001961     1.06 [-0.4015, -0.3943] [-0.4017, -0.3940]
+     7                  Sent>1 -0.3616    0.001520     0.001677     1.10 [-0.3646, -0.3587] [-0.3649, -0.3584]
+     8   Sent>1 AND Received>3 -0.4057    0.004055     0.004181     1.03 [-0.4137, -0.3978] [-0.4139, -0.3975]
+     9                  Sent>3 -0.3787    0.003505     0.003883     1.11 [-0.3856, -0.3718] [-0.3863, -0.3711]
+    10 Received<=3 AND Sent<=3 -0.3095    0.001223     0.001312     1.07 [-0.3119, -0.3071] [-0.3120, -0.3069]
+
+Reference SE ratio (clustered/ordinary): 1.131.
+Subgroup SE ratios: 1.021 to 1.108; median 1.059.
+Clustered SE is larger in 10/10 subgroups.
+Subgroup CIs exclude zero: ordinary 10/10; clustered 10/10.
+Subgroup CIs exclude reference point: ordinary 10/10; clustered 10/10.
+Coefficients, directions, AME point estimates and the size-weighted quality ranking are unaffected by covariance choice.
+M already used user-clustered standard errors; A2 adds the ordinary-error comparison.
+Ordinary SEs assume independent observations and the model-based variance. CRV1 allows within-user dependence.
+The comparison does not isolate dependence from all possible model misspecification.
+These are pointwise 95% coefficient CIs; p-values test beta=0, not beta=reference_beta.
+CI exclusion of the reference point is descriptive, not a formal test of subgroup-reference difference. The reference is estimated and overlaps each subgroup; joint covariance and post-selection adjustment are not estimated.
+Use clustered uncertainty for interpretation. These associations are descriptive, not causal.
+
+Run: python experiments/A2_user_dependence/code/run_dependence_analysis.py
+Completed fits are checkpointed. Inputs are read only; output is confined to experiments/A2_user_dependence/.
+The validated A1 parquet cache is required. Binary reciprocity is recovered as proportional reciprocity > 0.
+Each likelihood is fitted once with clustered inference; pyfixest.vcov('iid') recalculates ordinary inference on the same fit.
+

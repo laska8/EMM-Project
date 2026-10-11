@@ -1,0 +1,25 @@
+{
+  "comparison": "binary versus proportional reciprocity",
+  "top_k": 10,
+  "binary_valid_subgroups": 29,
+  "proportional_valid_subgroups": 29,
+  "shared_top_k_count": 9,
+  "union_top_k_count": 11,
+  "jaccard_top_k": 0.8181818181818182,
+  "binary_reference_beta": -0.2412668986397831,
+  "proportional_reference_beta": -0.37284690541014737,
+  "proportional_reference_se": 0.001346868806098766,
+  "proportional_reference_ci": [
+    -0.37548671976200143,
+    -0.3702070910582933
+  ],
+  "shared_top_k_coefficient_sign_agreement_count": 9,
+  "shared_top_k_difference_direction_agreement_count": 9,
+  "all_shared_subgroup_count": 29,
+  "all_shared_coefficient_sign_agreement_count": 29,
+  "all_shared_difference_direction_agreement_count": 21,
+  "proportional_negative_coefficients": 29,
+  "proportional_positive_coefficients": 0,
+  "same_sample_and_search_settings": true,
+  "proportional_subgroups_with_separation_exclusions": 6
+}

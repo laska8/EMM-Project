@@ -1,0 +1,36 @@
+RESULT FIELDS AND UNITS
+=======================
+description: AND-connected subgroup selector conditions, with original names.
+n: input subgroup observation count; overlapping subgroup sizes cannot be added.
+fitted_rows: observations actually retained after separation handling (A1).
+excluded_for_separation: input rows excluded by fixed-effect separation (A1).
+return_rate: observed return proportion, 0 to 1.
+return_rate_pct: observed return rate in percent, 0 to 100.
+coverage_pct: subgroup input n / 36,031,393, multiplied by 100.
+beta: reciprocity coefficient on the log-odds scale, conditional on controls/FEs.
+se: standard error of beta; original M and A1 use user-clustered CRV1.
+ci_low, ci_high: lower/upper bounds of a pointwise 95% coefficient interval.
+p_value: test of beta=0, NOT a test of beta=reference_beta. Stored zero can
+  represent numerical underflow; report p<0.001 rather than a literal p=0.
+reference_beta: global coefficient fitted using the same reciprocity measure.
+delta (original M and A1): ABSOLUTE subgroup-reference coefficient difference.
+signed_delta: beta - reference_beta, preserving direction.
+quality: sqrt(n) * absolute subgroup-reference coefficient difference.
+rank / quality_rank: position in M's size-weighted quality ordering, 1 is highest.
+ame_pp: average binary 0-to-1 discrete probability change, in percentage points.
+reference_ame_pp: the same quantity averaged over the full reference population.
+delta_ame_pp: subgroup AME minus reference AME, in percentage points.
+coefficient_difference_rank: rank by abs(signed_delta), WITHOUT size weighting.
+ame_difference_rank: rank by abs(delta_ame_pp), WITHOUT size weighting.
+ordinary_*: model-based iid inference in A2, treating rows as independent.
+clustered_*: inference clustered by user (CRV1) in A2.
+se_ratio_clustered_over_ordinary: clustered SE divided by ordinary SE.
+se_change_pct: 100 * (SE ratio - 1), a percentage change in uncertainty.
+ci_excludes_reference_point: descriptive interval diagnostic; not a formal
+  difference test, because the estimated reference and subgroup overlap.
+
+The same user can occur across months and subreddits; clustering is by user.
+Sent/Received abbreviate replies_sent/replies_received in the data. These are
+counts in the supplied adjacency networks, which do not preserve repeated-message
+intensity. Binary reciprocity indicates any mutual partner. Proportional
+reciprocity is reciprocal_partners / outgoing_partners.

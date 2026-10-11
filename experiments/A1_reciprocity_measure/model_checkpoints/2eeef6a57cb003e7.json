@@ -1,0 +1,11 @@
+{
+  "signature": "31d88973b41bf5a6638a17fec1dce82151c2c10e0e7feb0d06e3ff2982a02651",
+  "description": "replies_received<=0 AND replies_sent>3",
+  "n": 159536,
+  "return_rate": 0.556275699528633,
+  "status": "skipped",
+  "reason": "No reciprocity variation",
+  "elapsed_seconds": 24.46899999999914,
+  "prior_signature": "ff9e68c4266b7a97469a03237bbcd6a5d9dd5afec8cbed78cedb10f31ca4ffd2",
+  "relocation_from_signature": "b44ff196a0008fcaccc702f71d2d4274784d5d9358925eec9a4823e1a8c159cf"
+}

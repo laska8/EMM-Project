@@ -1,0 +1,30 @@
+{
+  "signature": "8a792c1d2e459d361124d3bfca6c67ced9828e0f0b9b7a0aecbc6bb13f7eac73",
+  "key": "reference",
+  "description": "reference",
+  "quality_rank": null,
+  "n": 36031393,
+  "user_clusters": 3354982,
+  "return_rate": 0.36388026963043035,
+  "converged": true,
+  "excluded_observations": 0,
+  "saved_beta": -0.2412668986397831,
+  "beta_difference_from_saved": -2.3046564656681312e-12,
+  "saved_quality": null,
+  "ordinary": {
+    "beta": -0.24126689864208775,
+    "se": 0.0010138574393053705,
+    "ci_low": -0.2432540227085843,
+    "ci_high": -0.23927977457559121,
+    "p_value_beta_zero": 0.0
+  },
+  "clustered": {
+    "beta": -0.24126689864208775,
+    "se": 0.0011463315922111256,
+    "ci_low": -0.243513667277162,
+    "ci_high": -0.2390201300070135,
+    "p_value_beta_zero": 0.0
+  },
+  "elapsed_seconds": 103.73400000000015,
+  "relocation_from_signature": "d72ea3e535d8cfb899c2eeeec3e7caafcc7ce283bcfca56c508dc5d5b9460d43"
+}

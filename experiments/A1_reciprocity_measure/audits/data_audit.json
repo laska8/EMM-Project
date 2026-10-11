@@ -1,0 +1,22 @@
+{
+  "data_size": 1656499945,
+  "data_mtime_ns": 1791049759371856900,
+  "total_observations": 36031393,
+  "cache_format_version": 1,
+  "users": 3354982,
+  "subreddits": 2046,
+  "return_rate": 0.36388026963043035,
+  "definition": "reciprocal_partners / outgoing_partners",
+  "definition_verified_all_rows": true,
+  "thresholds": {
+    "replies_sent": [
+      1.0,
+      3.0
+    ],
+    "replies_received": [
+      0.0,
+      1.0,
+      3.0
+    ]
+  }
+}

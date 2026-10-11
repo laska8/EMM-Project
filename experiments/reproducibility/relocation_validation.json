@@ -1,0 +1,26 @@
+[
+  {
+    "script": "A1_reciprocity_measure\\code\\run_reciprocity_comparison.py",
+    "ran_from_canonical_location": true,
+    "no_fit_subprocess_needed": true,
+    "numerical_table_unchanged": true
+  },
+  {
+    "script": "A2_user_dependence\\code\\run_dependence_analysis.py",
+    "ran_from_canonical_location": true,
+    "no_fit_subprocess_needed": true,
+    "numerical_table_unchanged": true
+  },
+  {
+    "script": "A3_probability_scale\\code\\run_ame_analysis.py",
+    "ran_from_canonical_location": true,
+    "no_fit_subprocess_needed": true,
+    "numerical_table_unchanged": true
+  },
+  {
+    "script": "M_reference_discovery\\code\\added\\report_top_subgroups.py",
+    "ran_from_canonical_location": true,
+    "no_fit_subprocess_needed": true,
+    "numerical_table_unchanged": true
+  }
+]

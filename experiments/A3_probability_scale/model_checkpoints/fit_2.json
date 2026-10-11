@@ -1,0 +1,14 @@
+{
+  "signature": "e84fa256c17fcb18dd411d24c3f8723df3a111d83b599230201a04db44f1137a",
+  "description": "replies_sent>1.0 AND replies_received>1.0",
+  "n": 11289290,
+  "return_rate": 0.5958488974948823,
+  "beta": -0.42851619585944506,
+  "saved_beta": -0.4285161958594748,
+  "beta_difference_from_saved": 2.9753977059954195e-14,
+  "ame": -0.0836149256358093,
+  "ame_pp": -8.36149256358093,
+  "converged": true,
+  "elapsed_seconds": 35.40599999999995,
+  "relocation_from_signature": "3ab5eaccf25aba1ee816acaddeae96e182048854fef176d1915eb08fdb01156e"
+}
