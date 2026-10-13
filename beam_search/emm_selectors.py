@@ -19,16 +19,35 @@ class Selector:
         return f"{self.column}{self.operator}{self.value}"
 
 
-def generate_numeric_selectors(df, col, quantiles=(0.25, 0.5, 0.75)):
+# LBCA strategy of Meeng & Knobbe (2021): Local, Binary, Coarse, All.
+# The cut points are the equal-frequency bin boundaries of the subgroup
+# that is being refined (not of the whole dataset), every cut point gives
+# a "<=" and a ">" selector, and all of them are returned.
+def generate_local_selectors(subgroup, col, n_bins=8):
+    quantiles = [i / n_bins for i in range(1, n_bins)]
+
     selectors=[]
     for cols in col:
-        thresholds = (df[cols].dropna().quantile(quantiles).unique())
+        # "lower" keeps the cut points at values that occur in the subgroup
+        thresholds = (subgroup[cols].dropna().quantile(quantiles, interpolation="lower").unique())
 
         for threshold in thresholds:
             selectors.append(Selector(cols, "<=", float(threshold)))
             selectors.append(Selector(cols, ">", float(threshold)))
 
     return selectors
+
+
+def refine_description(description, selector):
+    # a local cut point lies inside the subgroup, so a new bound on the
+    # same side of the same column is tighter and replaces the old one
+    # (replies_sent>1 refined with replies_sent>3 is just replies_sent>3)
+    kept = tuple(
+        old for old in description
+        if (old.column, old.operator) != (selector.column, selector.operator)
+    )
+
+    return kept + (selector,)
 
 
 def apply_description(df, description):

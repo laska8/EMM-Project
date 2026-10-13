@@ -14,7 +14,7 @@ FORMULA = (
 TARGET = "recip_binary"
 
 
-def fit_logistic_model(df):
+def fit_logistic_model(df, formula=FORMULA):
 
     # no reciprocity effect to estimate when it does not vary
     # in the subgroup (e.g. users who received no replies)
@@ -23,7 +23,7 @@ def fit_logistic_model(df):
 
     try:
         model = pf.feglm(
-            FORMULA,
+            formula,
             data=df,
             family="logit",
             vcov={"CRV1": "user"},

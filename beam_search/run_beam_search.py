@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 
 from beam_search import BeamSearchEMM
-from emm_selectors import generate_numeric_selectors
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -63,18 +62,14 @@ selector_columns = [
     "replies_received",
 ]
 
-selectors = generate_numeric_selectors(
-    df,
-    selector_columns
-)
-
-
 search = BeamSearchEMM(
     df=df,
-    selectors=selectors,
+    selector_columns=selector_columns,
+    n_bins=8,
     beam_width=10,
-    max_depth=2,
+    max_depth=3,
     min_support=5000,
+    min_cell=10,
     alpha=0.5,
 )
 
