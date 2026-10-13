@@ -11,5 +11,4 @@ logistic_resgression/results/subreddit_logistic_results.csv.
 Original M: beam_search/beam_search.py, emm_selectors.py, logistic_model.py,
 run_beam_search.py and emm_beam_search_results.csv.
 
-The final report reads the original evidence directly. See
-../reproducibility/manifest.json for exact current paths and hashes.
+The final report reads the original evidence directly.

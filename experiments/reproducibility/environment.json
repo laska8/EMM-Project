@@ -1,13 +1,13 @@
 {
-  "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
   "platform": "Windows-11-10.0.26200-SP0",
-  "analysis_executable": "C:\\Users\\tahai\\anaconda3\\python.exe",
+  "analysis_executable": "C:\\Users\\leler\\AppData\\Local\\Temp\\claude\\c--EMMProject-EMM-Project\\c16bd071-2841-42d6-aa20-626edbc43bea\\scratchpad\\venv\\Scripts\\python.exe",
   "packages": {
     "pyfixest": "0.60.0",
-    "pandas": "2.3.3",
-    "numpy": "1.26.4",
-    "scipy": "1.13.1",
-    "pyarrow": "16.1.0",
-    "matplotlib": "3.9.2"
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pyarrow": "26.0.0",
+    "matplotlib": "3.11.2"
   }
 }

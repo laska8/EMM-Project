@@ -1,1 +1,7 @@
 __pycache__/
+# rewritten by every A2 run
+A2_user_dependence/audits/protected_files_before.json
+A2_user_dependence/audits/source_integrity.json
+# built on demand by code/build_bundle.py and code/render_report.py
+FINAL_REPORT.pdf
+FINAL_REPORT.txt

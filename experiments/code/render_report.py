@@ -1,4 +1,5 @@
 """Render the bundled report using reportlab; no model fitting or source edits."""
+from datetime import date
 import json
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -10,6 +11,8 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak
 
 BASE = Path(__file__).resolve().parents[1]
+_date = date.fromisoformat(json.loads((BASE / "reproducibility/report_content.json").read_text(encoding="utf-8"))["date"])
+REPORT_DATE = f"{_date.day} {_date:%B %Y}".upper()
 NAVY = colors.HexColor("#19374b")
 TEAL = colors.HexColor("#087e8b")
 INK = colors.HexColor("#263746")
@@ -34,7 +37,7 @@ def footer(canvas, doc):
     canvas.line(42, 40, w - 42, 40)
     canvas.setFont("Helvetica", 8)
     canvas.setFillColor(colors.HexColor("#657787"))
-    canvas.drawString(42, 27, "EMM PROJECT  |  COMPLETED EXPERIMENTS  |  11 OCTOBER 2026")
+    canvas.drawString(42, 27, f"EMM PROJECT  |  COMPLETED EXPERIMENTS  |  {REPORT_DATE}")
     canvas.drawRightString(w - 42, 27, str(doc.page))
     canvas.restoreState()
 

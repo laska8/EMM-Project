@@ -1,14 +1,13 @@
 {
-  "signature": "e84fa256c17fcb18dd411d24c3f8723df3a111d83b599230201a04db44f1137a",
+  "signature": "e24c8e3115961e819bd5c35d77648542b579288450fe6da514bed92571cf246e",
   "description": "reference",
   "n": 36031393,
   "return_rate": 0.36388026963043035,
-  "beta": -0.24126689863633557,
-  "saved_beta": -0.2412668986397831,
-  "beta_difference_from_saved": 3.4475200472172673e-12,
-  "ame": -0.044365785322636575,
-  "ame_pp": -4.436578532263658,
+  "beta": -0.24126689864012796,
+  "saved_beta": -0.2412668986397752,
+  "beta_difference_from_saved": -3.5274561049902786e-13,
+  "ame": -0.044365785323366894,
+  "ame_pp": -4.436578532336689,
   "converged": true,
-  "elapsed_seconds": 81.4369999999999,
-  "relocation_from_signature": "3ab5eaccf25aba1ee816acaddeae96e182048854fef176d1915eb08fdb01156e"
+  "elapsed_seconds": 244.64000000001397
 }

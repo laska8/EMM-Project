@@ -2,7 +2,7 @@ import time
 
 import pandas as pd
 
-from logistic_model import fit_logistic_model
+from logistic_model import TARGET, fit_logistic_model
 from emm_selectors import (
     apply_description,
     generate_local_selectors,
@@ -21,7 +21,8 @@ class BeamSearchEMM:
         max_depth=3,
         min_support=5000,
         min_cell=10,
-        alpha=0.5
+        alpha=0.5,
+        target=TARGET
     ):
         self.df = df
         self.selector_columns = selector_columns
@@ -33,13 +34,17 @@ class BeamSearchEMM:
         self.min_support = min_support
         self.alpha = alpha
 
+        # column whose coefficient is compared with the reference model
+        self.target = target
+
         self.reference_result = None
 
 
     def fit_reference_model(self):
 
         self.reference_result = fit_logistic_model(
-            self.df
+            self.df,
+            self.target
         )
 
         if self.reference_result is None:
@@ -62,6 +67,8 @@ class BeamSearchEMM:
         # off to +-infinity (around -14 in practice) with a small standard
         # error, which would fill the beam with artefacts. This happens in
         # very active subgroups, where almost everyone has a partner.
+        # The check always uses the binary indicator, also when another
+        # reciprocity measure is the target, so the same subgroups are kept.
         cells = subgroup.groupby(
             ["recip_binary", "returned_next_month"]
         ).size()
@@ -70,7 +77,8 @@ class BeamSearchEMM:
             return None
 
         model_result = fit_logistic_model(
-            subgroup
+            subgroup,
+            self.target
         )
 
         if model_result is None:

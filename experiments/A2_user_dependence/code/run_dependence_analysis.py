@@ -245,7 +245,9 @@ def build_report(run_signature):
 def protected_files():
     tracked = subprocess.check_output(["git", "ls-files"], cwd=ROOT, text=True).splitlines()
     return {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
-            for name in tracked if Path(name).suffix in (".py", ".ipynb", ".csv", ".md")}
+            for name in tracked if Path(name).suffix in (".py", ".ipynb", ".csv", ".md")
+            # A2 rewrites its own tracked outputs; they are not protected inputs.
+            and not name.startswith("experiments/A2_user_dependence/")}
 
 
 def main():

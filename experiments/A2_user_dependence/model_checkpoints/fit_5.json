@@ -1,30 +1,29 @@
 {
-  "signature": "8a792c1d2e459d361124d3bfca6c67ced9828e0f0b9b7a0aecbc6bb13f7eac73",
+  "signature": "94ab8efbbc91f4791e50eea71da2cd843d1feafee1508df4791a01974e32d609",
   "key": "5",
-  "description": "replies_sent>3.0 AND replies_received>0.0",
+  "description": "replies_sent>3.0 AND replies_received>2.0 AND replies_sent<=22.0",
   "quality_rank": 5,
-  "n": 6871536,
-  "user_clusters": 1217588,
-  "return_rate": 0.7144964386419572,
+  "n": 5102185,
+  "user_clusters": 1070171,
+  "return_rate": 0.7121462667465017,
   "converged": true,
   "excluded_observations": 0,
-  "saved_beta": -0.4417707842144281,
-  "beta_difference_from_saved": -5.828670879282072e-14,
-  "saved_quality": 525.59316189809,
+  "saved_beta": -0.5278534519861959,
+  "beta_difference_from_saved": -1.1324274851176597e-14,
+  "saved_quality": 647.3421862883986,
   "ordinary": {
-    "beta": -0.4417707842144864,
-    "se": 0.003967099025438354,
-    "ci_low": -0.4495461554274495,
-    "ci_high": -0.4339954130015233,
+    "beta": -0.5278534519862073,
+    "se": 0.006040284694119603,
+    "ci_low": -0.5396921924430502,
+    "ci_high": -0.5160147115293643,
     "p_value_beta_zero": 0.0
   },
   "clustered": {
-    "beta": -0.4417707842144864,
-    "se": 0.00416633789928304,
-    "ci_low": -0.4499366564445054,
-    "ci_high": -0.4336049119844674,
+    "beta": -0.5278534519862073,
+    "se": 0.006197906886494105,
+    "ci_low": -0.5400011262632685,
+    "ci_high": -0.515705777709146,
     "p_value_beta_zero": 0.0
   },
-  "elapsed_seconds": 47.54699999999991,
-  "relocation_from_signature": "d72ea3e535d8cfb899c2eeeec3e7caafcc7ce283bcfca56c508dc5d5b9460d43"
+  "elapsed_seconds": 80.17199999990407
 }

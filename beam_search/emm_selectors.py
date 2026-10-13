@@ -23,6 +23,9 @@ class Selector:
 # The cut points are the equal-frequency bin boundaries of the subgroup
 # that is being refined (not of the whole dataset), every cut point gives
 # a "<=" and a ">" selector, and all of them are returned.
+# Difference from the paper (strategy 3-lbca): it uses "<=" and ">=" with
+# cut points computed separately for each operator, here both selectors
+# share one cut point and split the subgroup into two complementary parts.
 def generate_local_selectors(subgroup, col, n_bins=8):
     quantiles = [i / n_bins for i in range(1, n_bins)]
 

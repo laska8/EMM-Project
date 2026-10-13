@@ -1,14 +1,13 @@
 {
-  "signature": "e84fa256c17fcb18dd411d24c3f8723df3a111d83b599230201a04db44f1137a",
-  "description": "replies_sent>3.0 AND replies_received>1.0",
-  "n": 6448956,
-  "return_rate": 0.7236599226293372,
-  "beta": -0.487262926966533,
-  "saved_beta": -0.4872629269664936,
-  "beta_difference_from_saved": -3.941291737419306e-14,
-  "ame": -0.07832259808771379,
-  "ame_pp": -7.832259808771378,
+  "signature": "e24c8e3115961e819bd5c35d77648542b579288450fe6da514bed92571cf246e",
+  "description": "replies_sent>2.0 AND replies_received>1.0 AND replies_sent<=17.0",
+  "n": 7433585,
+  "return_rate": 0.633790290956517,
+  "beta": -0.480928991427385,
+  "saved_beta": -0.4809289914273917,
+  "beta_difference_from_saved": 6.716849298982197e-15,
+  "ame": -0.09406882747097399,
+  "ame_pp": -9.406882747097399,
   "converged": true,
-  "elapsed_seconds": 25.15599999999995,
-  "relocation_from_signature": "3ab5eaccf25aba1ee816acaddeae96e182048854fef176d1915eb08fdb01156e"
+  "elapsed_seconds": 68.5
 }

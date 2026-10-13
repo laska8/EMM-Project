@@ -1,46 +1,38 @@
 A1: BINARY VERSUS PROPORTIONAL RECIPROCITY
 
-Top-10 overlap: 9 shared descriptions / 11 distinct descriptions.
-Jaccard overlap: 0.8182.
-Coefficient-sign agreement among shared top-10: 9/9.
-Difference-direction agreement among shared top-10: 9/9.
-Binary reference beta: -0.241267.
-Proportional reference beta: -0.372847 (95% CI [-0.375487, -0.370207]).
+                                    Subgroup Binary rank Prop. rank Binary beta Prop. beta Binary delta Prop. delta Closest match
+    Received > 1 and Sent <= 14 and Sent > 1           1       220*      -0.449     -0.883       -0.208      -0.510          0.34
+                   Received > 3 and Sent > 4           2         20      -0.555     -1.590       -0.314      -1.217          0.91
+    Received > 1 and Sent <= 17 and Sent > 2           3       122*      -0.481     -1.150       -0.240      -0.777          0.49
+                   Received > 2 and Sent > 3           4         32      -0.512     -1.402       -0.270      -1.030          0.82
+    Received > 2 and Sent <= 22 and Sent > 3           5        78*      -0.528     -1.390       -0.287      -1.017          0.70
+                   Received > 1 and Sent > 2           6         77      -0.464     -1.166       -0.223      -0.793          0.60
+    Received > 2 and Sent <= 19 and Sent > 2           7       138*      -0.499     -1.190       -0.258      -0.817          0.55
+Received <= 17 and Received > 1 and Sent > 2           8       109*      -0.477     -1.172       -0.236      -0.799          0.49
+     Received > 1 and Sent <= 8 and Sent > 1           9       254*      -0.457     -0.856       -0.216      -0.483          0.23
+                   Received > 2 and Sent > 2          10        103      -0.480     -1.205       -0.239      -0.832          0.67
+                   Received > 1 and Sent > 5          74          1      -0.509     -1.658       -0.268      -1.285          0.78
+                   Received > 2 and Sent > 5          50          2      -0.531     -1.679       -0.290      -1.306          0.81
+                                    Sent > 5         229          3      -0.397     -1.635       -0.156      -1.262          0.77
+                   Received > 1 and Sent > 4          35          4      -0.503     -1.526       -0.262      -1.153          0.85
+                                    Sent > 4         212          5      -0.391     -1.497       -0.149      -1.124          0.81
+                   Received > 1 and Sent > 6         93*          6      -0.518     -1.766       -0.277      -1.393          0.70
+                   Received > 2 and Sent > 6          71          7      -0.541     -1.784       -0.300      -1.411          0.72
+Received <= 31 and Received > 1 and Sent > 6         93*          8      -0.537     -1.861       -0.296      -1.488          0.61
+                   Received > 3 and Sent > 5          26          9      -0.555     -1.709       -0.314      -1.336          0.86
+                   Received > 2 and Sent > 4          16         10      -0.530     -1.554       -0.288      -1.181          0.91
 
-PROPORTIONAL TOP 10
- Rank                   Subgroup          n   Beta           95% CI Signed delta Quality
-    1  Sent > 3 and Received > 0  6,871,536 -1.339 [-1.350, -1.328]       -0.966  2533.2
-    2                   Sent > 3  7,031,072 -1.327 [-1.338, -1.315]       -0.954  2529.1
-    3  Sent > 3 and Received > 1  6,448,956 -1.367 [-1.379, -1.356]       -0.994  2525.5
-    4  Sent > 3 and Received > 3  5,056,348 -1.440 [-1.453, -1.427]       -1.067  2399.1
-    5                   Sent > 1 16,170,924 -0.838 [-0.843, -0.833]       -0.465  1870.6
-    6  Sent > 1 and Received > 0 14,380,085 -0.859 [-0.864, -0.854]       -0.486  1843.0
-    7  Sent > 1 and Received > 1 11,289,290 -0.900 [-0.906, -0.895]       -0.527  1772.3
-    8  Sent > 1 and Received > 3  6,532,647 -1.026 [-1.035, -1.018]       -0.653  1669.6
-    9 Sent > 3 and Received <= 3  1,974,724 -1.344 [-1.365, -1.323]       -0.971  1364.8
-   10 Sent > 1 and Received <= 3  9,638,277 -0.786 [-0.792, -0.779]       -0.413  1281.5
-
-COMPARISON OF SUBGROUPS APPEARING IN EITHER TOP 10
-                   Subgroup  Binary rank  Prop. rank Binary beta Prop. beta Binary delta Prop. delta Both top 10
-  Received > 3 and Sent > 3            1           4      -0.522     -1.440       -0.281      -1.067         Yes
-  Received > 1 and Sent > 1            2           7      -0.429     -0.900       -0.187      -0.527         Yes
-  Received > 1 and Sent > 3            3           3      -0.487     -1.367       -0.246      -0.994         Yes
-  Received > 0 and Sent > 1            4           6      -0.400     -0.859       -0.159      -0.486         Yes
-  Received > 0 and Sent > 3            5           1      -0.442     -1.339       -0.201      -0.966         Yes
- Received <= 3 and Sent > 1            6          10      -0.398     -0.786       -0.157      -0.413         Yes
-                   Sent > 1            7           5      -0.362     -0.838       -0.120      -0.465         Yes
-  Received > 3 and Sent > 1            8           8      -0.406     -1.026       -0.164      -0.653         Yes
-                   Sent > 3            9           2      -0.379     -1.327       -0.137      -0.954         Yes
-Received <= 3 and Sent <= 3           10          23      -0.309     -0.331       -0.068      +0.042          No
- Received <= 3 and Sent > 3           20           9      -0.371     -1.344       -0.130      -0.971          No
-
-Notes: All models use the same observations, activity controls, month/subreddit fixed effects, and user-clustered SEs.
-n is the input subgroup size used for M's quality function. Fitted row counts and separation exclusions are recorded separately.
-For affected subgroups, binary refits verify identical excluded row positions and reproduce the original coefficients and SEs.
+Proportional reference: beta -0.3728, SE 0.001347.
+Valid subgroups: binary 347, proportional 409; 147 were visited by both searches.
+Top-10 overlap: 0 shared descriptions / 20 distinct descriptions (Jaccard 0.000).
+Observations selected by at least one top-10 subgroup: binary 11,289,290, proportional 5,344,582; 5,097,591 are selected by both lists (Jaccard 0.442; 95.4% of the proportional and 45.2% of the binary selection).
+Closest match is the largest Jaccard overlap of observations with any subgroup of the other top list.
+Of the 20 subgroups in either top-10 list, 20 could be estimated under both measures; the direction of the subgroup-reference difference agrees in 20.
+Both searches use the same data, model, local discretization and settings; only the reciprocity measure differs.
+The thresholds are recomputed in every refined subgroup, so the two searches follow different paths and
+need not visit the same subgroups. A rank marked * belongs to a subgroup that the search of that measure
+did not visit: it was fitted separately and the rank is the place its quality would take in that search.
 Signed delta compares each subgroup with the global reference fitted using the SAME reciprocity measure.
-Ranks use sqrt(n) * abs(signed delta). Conditions are canonicalized before list comparisons.
 Binary reciprocity indicates any mutual partner; proportional reciprocity is reciprocal/outgoing partners.
 Coefficients refer to different contrasts and should not be read as directly comparable probability effects.
 Subgroups overlap. CIs are pointwise; no post-selection correction is applied. Associations are descriptive.
-Source: saved binary M results and the full reciprocity_return.csv analysis dataset.
-The weighted-reciprocity search is not part of this binary/proportional comparison.

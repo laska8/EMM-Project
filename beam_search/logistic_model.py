@@ -3,27 +3,30 @@ import gc
 import pyfixest as pf
 
 
-# same model as logistic_resgression/pooled_logistic.ipynb:
-# logit with month and subreddit fixed effects,
-# standard errors clustered by user
-FORMULA = (
-    "returned_next_month ~ recip_binary + log_sent + log_received"
-    " | month + subreddit"
-)
-
+# reciprocity measure of the main analysis: at least one reciprocal partner
 TARGET = "recip_binary"
 
 
-def fit_logistic_model(df, formula=FORMULA):
+# same model as logistic_resgression/pooled_logistic.ipynb:
+# logit with month and subreddit fixed effects,
+# standard errors clustered by user
+def model_formula(target=TARGET):
+    return (
+        f"returned_next_month ~ {target} + log_sent + log_received"
+        " | month + subreddit"
+    )
+
+
+def fit_logistic_model(df, target=TARGET):
 
     # no reciprocity effect to estimate when it does not vary
     # in the subgroup (e.g. users who received no replies)
-    if df[TARGET].nunique() < 2:
+    if df[target].nunique() < 2:
         return None
 
     try:
         model = pf.feglm(
-            formula,
+            model_formula(target),
             data=df,
             family="logit",
             vcov={"CRV1": "user"},
@@ -48,10 +51,10 @@ def fit_logistic_model(df, formula=FORMULA):
         return None
 
     # reciprocity itself was dropped as collinear
-    if TARGET not in estimates.index:
+    if target not in estimates.index:
         return None
 
-    row = estimates.loc[TARGET]
+    row = estimates.loc[target]
 
     return {
         "beta": row["Estimate"],
