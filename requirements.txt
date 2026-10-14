@@ -1,0 +1,14 @@
+# Core analysis (versions from experiments/reproducibility/environment.json)
+pandas==3.0.6
+numpy==2.5.4
+scipy==1.18.1
+pyarrow==26.0.0
+matplotlib==3.11.2
+pyfixest==0.60.0
+
+# Notebooks and helpers
+statsmodels        # logistic_resgression/pooled_logistic.ipynb
+jinja2             # pandas table styling in the EDA notebook
+duckdb==1.5.6      # logistic_resgression/repair.ipynb
+reportlab          # experiments/code/render_report.py
+jupyter
