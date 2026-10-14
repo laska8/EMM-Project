@@ -1,4 +1,4 @@
-# Local Subgroup Discovery for Exceptional Behavior in Networked Data
+# Subgroup Discovery for Exceptional Behavior in Networked Data
 
 Code and results for our Exceptional Model Mining (EMM) study of Reddit reply
 networks. We ask **in which groups of users the link between reciprocity and
@@ -11,13 +11,6 @@ fit one logistic regression on all data (the reference model), then use beam
 search to find activity-defined subgroups where the reciprocity coefficient is
 most different from the reference.
 
-**Headline finding.** Holding activity fixed, users with a reciprocal partner
-are *less* likely to return next month (reference coefficient
-β = −0.241, about −4.4 percentage points). Every subgroup the search found has
-an even more negative coefficient. The effect is strongest among active users
-who both send and receive several replies, where it is roughly twice the
-reference. These are adjusted associations, not causal effects.
-
 ---
 
 ## Contents
@@ -29,7 +22,6 @@ reference. These are adjusted associations, not causal effects.
 - [Where each paper result comes from](#where-each-paper-result-comes-from)
 - [Model and search settings](#model-and-search-settings)
 - [Robustness experiments (A1 to A3)](#robustness-experiments-a1-to-a3)
-- [Known issues](#known-issues)
 - [Authors](#authors)
 
 ---
@@ -47,25 +39,6 @@ EMM-Project/
 ├── beam_search/             the EMM beam search (main experiment, "M")
 └── experiments/             robustness experiments A1–A3, launcher, report builder
 ```
-
-| Folder | Main files | What they do |
-|---|---|---|
-| `network_eda/` | `temporal_eda.py`, `plot_temporal_results.py` | Per-subreddit activity and return statistics over the 11 months, and the temporal figures. `temporal_analyzer.py` / `temporal_plots.py` are helpers. |
-| `reddit_eda/` | `build_eda_datasets.py` | Streams every subreddit JSON once and writes the user-month datasets to `eda_outputs/`, including **`reciprocity_return.csv`**, the input to every model. |
-| | `reddit_eda.ipynb` | Reciprocity EDA. Only loads the built datasets, prints summaries and draws the paper figures. |
-| | `reply_network_analyzer.py`, `eda_datasets.py`, `eda_summaries.py`, `eda_plots.py` | Feature extraction for one subreddit, dataset caching, summary tables, plots. |
-| `logistic_resgression/` | `pooled_logistic.ipynb` | Pooled baseline logit with month and subreddit fixed effects, user-clustered SEs. |
-| | `subreddit_logistic.ipynb` | Separate models per subreddit; results in `results/`. |
-| | `repair.ipynb` | One-off DuckDB rebuild of `reciprocity_return.csv` from the three intermediate CSVs, for when the streamed build was interrupted. |
-| `beam_search/` | `run_beam_search.py` | Runs the search and writes `emm_beam_search_results.csv`. |
-| | `beam_search.py`, `emm_selectors.py`, `logistic_model.py` | `BeamSearchEMM`, subgroup conditions, and the logit fitted in every subgroup. |
-| | `run_breadth_check.py` | Refits the top 10 with an extra "number of contacts" control → `emm_breadth_check_results.csv`. |
-| | `plot_beam_search_results.py` | Forest plot of the top subgroups → `fig_beam_search_forest.{png,pdf}`. |
-| `experiments/` | `code/run_experiment.py` | One launcher for M, A1, A2, A3 (see below). |
-| | `A1_…/`, `A2_…/`, `A3_…/`, `M_reference_discovery/` | Code, reports, tables, LaTeX exports and model checkpoints per experiment. |
-| | `README.txt`, `reproducibility/` | Detailed experiment guide, data dictionary for every result column, and the exact package versions used. |
-
----
 
 ## Data
 
@@ -110,7 +83,7 @@ pip install -r requirements.txt
 
 **Hardware.** The full dataset is 36M rows. Building `eda_outputs/` produces
 several GB of CSV, and each subgroup model is a fixed-effects logit on millions
-of rows, so the beam search and A1–A3 need plenty of RAM and take hours.
+of rows, so the beam search and A1–A3 need plenty of RAM and take 1.5 to 2 hours.
 A1–A3 checkpoint every fit and resume where they stopped.
 
 ---
@@ -153,7 +126,7 @@ hard-coded `DATA` path near the top; point it at your
 ```bash
 python beam_search/run_beam_search.py           # → beam_search/emm_beam_search_results.csv
 python beam_search/plot_beam_search_results.py  # → forest plot
-python beam_search/run_breadth_check.py         # optional extra-control check
+python beam_search/run_breadth_check.py         # A4: contact-breadth check
 python experiments/code/run_experiment.py M-report --execute   # top-10 txt/csv/tex report
 ```
 
@@ -217,7 +190,7 @@ re-computed inside each subgroup being refined (8 bins).
 
 ## Robustness experiments (A1 to A3)
 
-| | Question | Result (top 10 subgroups) |
+| | Experiment | Result (top 10 subgroups) |
 |---|---|---|
 | **M** | Main search | 347 valid subgroups, all with a negative reciprocity coefficient (−1.150 to −0.216, reference −0.241). Top subgroup: sent > 1, received > 1, sent ≤ 14 (n = 10.0M, β = −0.449, q = 657.1). |
 | **A1** | Does the result depend on how reciprocity is measured? | Proportional reciprocity gives the same signs and difference directions for all 20 top-ten subgroups; the exact descriptions differ because thresholds are re-computed along different search paths. |
@@ -228,19 +201,6 @@ Full numbers: [`experiments/manuscript_results.txt`](experiments/manuscript_resu
 Detailed commands, inputs and limits: [`experiments/README.txt`](experiments/README.txt).
 
 ---
-
-## Known issues
-
-- **Paper vs. code version of the beam search.** The paper's Methods and EMM
-  results describe the earlier run: global quartile thresholds, depth 2,
-  29 subgroups, top subgroup *sent > 3 and received > 3* (β = −0.522,
-  q = 632.0). The code and CSVs in this repo are the later run with local
-  discretization and depth 3 (347 subgroups, numbers above). Pick one before
-  submission so the paper and the repo agree.
-- `logistic_resgression/` is misspelled; it is kept as is so existing paths
-  and notebook references keep working.
-- The notebooks contain absolute Windows paths (`C:\Users\...`) that must be
-  edited to run on another machine.
 
 ---
 
