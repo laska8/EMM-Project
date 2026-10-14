@@ -104,7 +104,7 @@ ax.scatter(
 )
 
 ax.set_yticks(list(y))
-ax.set_yticklabels([readable(d) for d in top["description"]])
+ax.set_yticklabels([f"{rank}  {readable(d)}" for rank, d in enumerate(top["description"], start=1)])
 
 # subgroup size next to each row
 ax_n = ax.secondary_yaxis("right")
@@ -132,7 +132,9 @@ fig.tight_layout()
 for extension in ["pdf", "png"]:
     fig.savefig(
         BASE_DIR / f"fig_beam_search_forest.{extension}",
-        dpi=300
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=0.03
     )
 
 plt.show()
