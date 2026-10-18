@@ -24,13 +24,12 @@ os.environ["NUMBA_THREADING_LAYER"] = "workqueue"
 # Import the shared paths from this project's experiments directory.
 EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
 sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
-from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
+from experiment_paths import ROOT, ORIGINAL_SEARCH, A1, A2, output_path
 
 import numpy as np
 import pandas as pd
 
 BASE = ORIGINAL_SEARCH
-ROOT = BASE.parent
 SOURCE = BASE / "emm_beam_search_results.csv"
 DATA = ROOT / "eda_outputs" / "reciprocity_return.csv"
 CACHE = A1 / "data_cache" / "prepared.parquet"

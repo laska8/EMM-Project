@@ -19,7 +19,7 @@ import time
 # Import the shared paths from this project's experiments directory.
 EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
 sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
-from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
+from experiment_paths import ORIGINAL_SEARCH, M, A1, output_path
 sys.path.insert(0, str(M / "code" / "added"))
 sys.path.insert(0, str(ORIGINAL_SEARCH))
 
@@ -236,11 +236,11 @@ def compare_results(df, proportional, proportional_search, checkpoints):
     def jaccard(left, right):
         return float((left & right).sum() / (left | right).sum())
 
-    def closest(key, others):
-        return max(jaccard(masks[key], masks[other]) for other in others)
-
+    # largest overlap with any subgroup of the other top-k list
     comparison["closest_in_other_top_10_jaccard"] = [
-        closest(key, proportional_keys if key in binary_keys else binary_keys) for key in union]
+        max(jaccard(masks[key], masks[other])
+            for other in (proportional_keys if key in binary_keys else binary_keys))
+        for key in union]
     covered_binary = np.logical_or.reduce([masks[key] for key in binary_keys])
     covered_proportional = np.logical_or.reduce([masks[key] for key in proportional_keys])
     covered_both = int((covered_binary & covered_proportional).sum())

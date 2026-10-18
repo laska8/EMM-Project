@@ -2,8 +2,6 @@ RESULT FIELDS AND UNITS
 =======================
 description: AND-connected subgroup selector conditions, with original names.
 n: input subgroup observation count; overlapping subgroup sizes cannot be added.
-fitted_rows: observations actually retained after separation handling (A1).
-excluded_for_separation: input rows excluded by fixed-effect separation (A1).
 return_rate: observed return proportion, 0 to 1.
 return_rate_pct: observed return rate in percent, 0 to 100.
 coverage_pct: subgroup input n / 36,031,393, multiplied by 100.
@@ -26,6 +24,12 @@ ordinary_*: model-based iid inference in A2, treating rows as independent.
 clustered_*: inference clustered by user (CRV1) in A2.
 se_ratio_clustered_over_ordinary: clustered SE divided by ordinary SE.
 se_change_pct: 100 * (SE ratio - 1), a percentage change in uncertainty.
+found_by_search_* (A1): whether that measure's own search visited the subgroup;
+  otherwise it was fitted separately for the comparison.
+closest_in_other_top_10_jaccard (A1): largest Jaccard overlap of observations
+  with any subgroup of the other measure's top-10 list.
+beta_contacts, se_contacts, ci_*_contacts (A4): reciprocity coefficient when the
+  number of distinct partners replaces replies sent and received as control.
 ci_excludes_reference_point: descriptive interval diagnostic; not a formal
   difference test, because the estimated reference and subgroup overlap.
 

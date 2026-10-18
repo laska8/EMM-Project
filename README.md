@@ -21,7 +21,7 @@ most different from the reference.
 - [Running the pipeline](#running-the-pipeline)
 - [Where each paper result comes from](#where-each-paper-result-comes-from)
 - [Model and search settings](#model-and-search-settings)
-- [Robustness experiments (A1 to A3)](#robustness-experiments-a1-to-a3)
+- [Robustness experiments (A1 to A4)](#robustness-experiments-a1-to-a4)
 - [Authors](#authors)
 
 ---
@@ -36,7 +36,7 @@ EMM-Project/
 ├── eda_outputs/             generated datasets (CSV, not in Git) and paper figures
 │   └── figures/             descriptive table, reciprocity figures (in Git)
 ├── logistic_resgression/    pooled baseline and per-subreddit logistic regressions
-├── beam_search/             the EMM beam search (main experiment, "M")
+├── beam_search/             the EMM beam search (main experiment, "M"), A4 check, paper figures
 └── experiments/             robustness experiments A1–A3, launcher, report builder
 ```
 
@@ -63,6 +63,7 @@ giving **36,031,393 observations**.
 | `reciprocal_partners` | Users who were both replied to and replied by |
 | `recip_binary` | 1 if `reciprocal_partners > 0` (main measure) |
 | `proportional_reciprocity` | `reciprocal_partners / outgoing_partners` (used in A1) |
+| distinct partners | `replies_sent + replies_received − reciprocal_partners`, computed in A4 |
 | `returned_next_month` | 1 if the user replies in the same subreddit next month |
 
 Column definitions for every result file are in
@@ -83,8 +84,10 @@ pip install -r requirements.txt
 
 **Hardware.** The full dataset is 36M rows. Building `eda_outputs/` produces
 several GB of CSV, and each subgroup model is a fixed-effects logit on millions
-of rows, so the beam search and A1–A3 need plenty of RAM and take 1.5 to 2 hours.
-A1–A3 checkpoint every fit and resume where they stopped.
+of rows. All experiments ran on a laptop with 16 GB of RAM: the beam search
+and A1 (a second full search) take several hours each, A2 and A3 about 15–30
+minutes, A4 about 25 minutes.
+A1–A3 checkpoint every fit and resume where they stopped; the main search and A4 do not.
 
 ---
 
@@ -125,8 +128,7 @@ hard-coded `DATA` path near the top; point it at your
 
 ```bash
 python beam_search/run_beam_search.py           # → beam_search/emm_beam_search_results.csv
-python beam_search/plot_beam_search_results.py  # → forest plot
-python beam_search/run_breadth_check.py         # A4: contact-breadth check
+python beam_search/plot_beam_search_results.py  # → forest plot of the top 10
 python experiments/code/run_experiment.py M-report --execute   # top-10 txt/csv/tex report
 ```
 
@@ -136,10 +138,14 @@ python experiments/code/run_experiment.py M-report --execute   # top-10 txt/csv/
 python experiments/code/run_experiment.py A1 --execute   # proportional reciprocity
 python experiments/code/run_experiment.py A2 --execute   # ordinary vs clustered SEs
 python experiments/code/run_experiment.py A3 --execute   # probability scale (AMEs)
+python beam_search/run_breadth_check.py                  # A4: distinct partners held fixed
+python beam_search/plot_paper_figures.py                 # figures for A3 and A4
 ```
 
 Without `--execute` the launcher only prints the command. Re-running replaces
-generated results but never edits source code.
+generated results but never edits source code. A4 is a plain script outside the
+launcher: 11 model fits (reference and top 10), about 25 minutes, no checkpoints.
+It writes `beam_search/emm_breadth_check_results.csv`.
 
 **7. Rebuild the summary report without refitting anything**
 
@@ -154,15 +160,17 @@ python experiments/code/render_report.py   # needs reportlab
 
 | Paper item | Produced by | Output in this repo |
 |---|---|---|
-| Fig. *Temporal participation and return* (3 panels) | `network_eda/temporal_eda.py`, `plot_temporal_results.py` | `network_eda/temporal_pattern_distribution.png`, `return_rate_distribution.png`, `return_window_gain.png` |
-| Table *Descriptive statistics* | `reddit_eda/reddit_eda.ipynb` (`EdaSummaries.descriptive_table`) | `eda_outputs/figures/descriptive_table.csv` |
-| Fig. *Next-month return by proportional reciprocity* | `reddit_eda/reddit_eda.ipynb` → `eda_plots.py` | `eda_outputs/figures/fig_reciprocity_return.png` |
-| Fig. *Distribution across subreddits* | same | `eda_outputs/figures/fig_subreddit_spread.png` |
-| Fig. *Activity composition of each reciprocity group* | same | `eda_outputs/figures/fig_reciprocity_composition.png` |
-| Table *Pooled baseline logistic regression* | `logistic_resgression/pooled_logistic.ipynb` | saved notebook outputs |
-| Table *Selected subreddit-level regression results* | `logistic_resgression/subreddit_logistic.ipynb` | `logistic_resgression/results/subreddit_logistic_results.csv` |
-| Results § *Exceptional model mining* | `beam_search/` | `beam_search/emm_beam_search_results.csv`, top-10 in `experiments/M_reference_discovery/` (see [Known issues](#known-issues)) |
-| Protocol § *Family A: Model Robustness* | `experiments/A1_*`, `A2_*`, `A3_*` | `reports/*.txt`, `tables/*.csv`, `latex/*.tex` in each folder; prose in `experiments/manuscript_results.txt` |
+| Fig. 1 *Temporal participation patterns* | `network_eda/temporal_eda.py`, `plot_temporal_results.py` | `network_eda/temporal_pattern_distribution.png` |
+| Fig. 2 *Effect of a broader return window* | same | `network_eda/return_window_gain.png` |
+| Table 1 *Descriptive statistics* | `reddit_eda/reddit_eda.ipynb` (`EdaSummaries.descriptive_table`) | `eda_outputs/figures/descriptive_table.csv` |
+| Table 2 *Pooled baseline logistic regression* | `logistic_resgression/pooled_logistic.ipynb` | saved notebook outputs |
+| Discussion: 25 of 2,046 subreddit coefficients positive | `logistic_resgression/subreddit_logistic.ipynb` | `logistic_resgression/results/subreddit_logistic_results.csv` |
+| Results § *Subgroup discovery*, Table 3 *Top five subgroups* | `beam_search/run_beam_search.py` | `beam_search/emm_beam_search_results.csv`, top 10 in `experiments/M_reference_discovery/` |
+| Fig. 3 *Coefficients of the top-ten subgroups* | `beam_search/plot_beam_search_results.py` | `beam_search/fig_beam_search_forest.pdf` |
+| Results § *Robustness checks*, A1–A3 | `experiments/A1_*`, `A2_*`, `A3_*` | `reports/*.txt`, `tables/*.csv` in each folder; prose in `experiments/manuscript_results.txt` |
+| Results § *Robustness checks*, A4 | `beam_search/run_breadth_check.py` | `beam_search/emm_breadth_check_results.csv` |
+| Fig. 4 *Distinct partners held fixed* (A4) | `beam_search/plot_paper_figures.py` | `beam_search/fig_breadth_check.pdf` |
+| *Coefficient against AME* (A3; not in the paper) | `beam_search/plot_paper_figures.py` | `beam_search/fig_coefficient_vs_ame.pdf` |
 
 ---
 
@@ -186,9 +194,18 @@ at least 5,000 observations per subgroup, at least 10 observations in each
 reciprocity × return cell (avoids separated logits), and cut points
 re-computed inside each subgroup being refined (8 bins).
 
+**A4 model** (`beam_search/run_breadth_check.py`): the two activity controls are
+replaced by the number of distinct partners. It cannot be added next to them,
+because sent, received and distinct partners together determine reciprocity.
+
+```
+returned_next_month ~ recip_binary + log(1 + distinct partners)
+                      | month + subreddit fixed effects,   SEs clustered by user
+```
+
 ---
 
-## Robustness experiments (A1 to A3)
+## Robustness experiments (A1 to A4)
 
 | | Experiment | Result (top 10 subgroups) |
 |---|---|---|
@@ -196,11 +213,11 @@ re-computed inside each subgroup being refined (8 bins).
 | **A1** | Does the result depend on how reciprocity is measured? | Proportional reciprocity gives the same signs and difference directions for all 20 top-ten subgroups; the exact descriptions differ because thresholds are re-computed along different search paths. |
 | **A2** | Do repeated observations of the same user matter? | User clustering raises SEs by 13% for the reference and 2–5% for subgroups; every interval stays below zero. |
 | **A3** | Do differences look the same on the probability scale? | Reference AME −4.44 pp; subgroup AMEs −10.14 to −7.25 pp. Directions agree 10/10, but the ranking by size changes. |
+| **A4** | Is it reciprocity or the number of distinct contacts? | With distinct partners held fixed instead of sent and received, the reference coefficient becomes +0.014; all top-10 subgroups stay negative but weaker (−0.073 to −0.301). |
 
-Full numbers: [`experiments/manuscript_results.txt`](experiments/manuscript_results.txt).
+Full numbers for M and A1–A3: [`experiments/manuscript_results.txt`](experiments/manuscript_results.txt);
+for A4: [`beam_search/emm_breadth_check_results.csv`](beam_search/emm_breadth_check_results.csv).
 Detailed commands, inputs and limits: [`experiments/README.txt`](experiments/README.txt).
-
----
 
 ---
 

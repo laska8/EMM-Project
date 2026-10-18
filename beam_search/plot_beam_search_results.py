@@ -1,8 +1,9 @@
-import re
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
+from subgroup_labels import readable
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -16,36 +17,7 @@ MUTED = "#52514e"
 GRID = "#d9d8d4"
 
 
-def readable(description):
-
-    bounds = {}
-
-    for part in description.split(" AND "):
-        column, operator, value = re.match(
-            r"replies_(\w+?)(<=|>)(.+)", part
-        ).groups()
-        bounds.setdefault(column, {})[operator] = f"{float(value):g}"
-
-    conditions = []
-
-    # always "sent" before "received"
-    for column in ["sent", "received"]:
-        bound = bounds.get(column, {})
-
-        # a lower and an upper bound on one attribute form an interval
-        if ">" in bound and "<=" in bound:
-            conditions.append(f"{bound['>']} < {column} ≤ {bound['<=']}")
-        elif ">" in bound:
-            conditions.append(f"{column} > {bound['>']}")
-        elif "<=" in bound:
-            conditions.append(f"{column} ≤ {bound['<=']}")
-
-    return ", ".join(conditions)
-
-
-# -----------------------------------
 # Forest plot of the top-k subgroups by quality
-# -----------------------------------
 
 results = pd.read_csv(RESULTS)
 

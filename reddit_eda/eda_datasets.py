@@ -109,9 +109,7 @@ class EdaDatasets:
             self.frames.pop(name, None)
 
 
-    # -----------------------------------
     # Datasets built from the JSON files
-    # -----------------------------------
 
     def subreddit_frames(self, analyzer):
 
@@ -250,9 +248,7 @@ class EdaDatasets:
         return self.streamed_dataset("reciprocity_return")
 
 
-    # -----------------------------------
     # Summary datasets derived from the ones above
-    # -----------------------------------
 
     def derived_dataset(self, name, build):
 

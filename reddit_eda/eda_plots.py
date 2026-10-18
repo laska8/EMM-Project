@@ -25,9 +25,7 @@ class EdaPlots:
         plt.show()
 
 
-    # -----------------------------------
     # General plots
-    # -----------------------------------
 
     @staticmethod
     def histogram(
@@ -164,9 +162,7 @@ class EdaPlots:
         plt.show()
 
 
-    # -----------------------------------
     # Paper figures (saved to FIGURE_DIR)
-    # -----------------------------------
 
     @staticmethod
     def reciprocity_return(pooled, by_both, group_order):

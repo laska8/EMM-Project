@@ -1,10 +1,8 @@
 from eda_datasets import EdaDatasets
 
 
-# -----------------------------------
 # Build every EDA dataset and save it to eda_outputs/
 # (datasets that already exist are skipped unless rebuild=True)
-# -----------------------------------
 
 datasets = EdaDatasets(rebuild=False)
 

@@ -90,9 +90,7 @@ class EdaSummaries:
         )
 
 
-    # -----------------------------------
     # Analysis sample used for the paper tables and figures
-    # -----------------------------------
 
     @staticmethod
     def analysis_sample(reciprocity_return_df):

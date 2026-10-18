@@ -1,8 +1,9 @@
-import re
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
+from subgroup_labels import readable
 
 BASE_DIR = Path(__file__).resolve().parent
 EXPERIMENTS = BASE_DIR.parent / "experiments"
@@ -11,37 +12,9 @@ BREADTH = BASE_DIR / "emm_breadth_check_results.csv"
 AME = EXPERIMENTS / "A3_probability_scale" / "tables" / "top_10_ame_comparison.csv"
 
 COLOR = "#2a78d6"
-COLOR_LIGHT = "#86b6ef"
-COLOR_EDGE = "#1c5cab"
 INK = "#0b0b0b"
 MUTED = "#52514e"
 GRID = "#d9d8d4"
-
-
-# same labels as plot_beam_search_results.py
-def readable(description):
-
-    bounds = {}
-
-    for part in description.split(" AND "):
-        column, operator, value = re.match(
-            r"replies_(\w+?)(<=|>)(.+)", part
-        ).groups()
-        bounds.setdefault(column, {})[operator] = f"{float(value):g}"
-
-    conditions = []
-
-    for column in ["sent", "received"]:
-        bound = bounds.get(column, {})
-
-        if ">" in bound and "<=" in bound:
-            conditions.append(f"{bound['>']} < {column} ≤ {bound['<=']}")
-        elif ">" in bound:
-            conditions.append(f"{column} > {bound['>']}")
-        elif "<=" in bound:
-            conditions.append(f"{column} ≤ {bound['<=']}")
-
-    return ", ".join(conditions)
 
 
 def style(ax):
@@ -74,9 +47,7 @@ plt.rcParams.update({
 })
 
 
-# -----------------------------------
 # A4: coefficient with activity controls and with distinct partners held fixed
-# -----------------------------------
 
 breadth = pd.read_csv(BREADTH)
 
@@ -105,7 +76,7 @@ ax.scatter(
     breadth["beta"],
     y,
     s=26,
-    color=COLOR,
+    color=INK,
     edgecolor="white",
     linewidth=0.8,
     zorder=3,
@@ -115,9 +86,9 @@ ax.scatter(
 ax.scatter(
     breadth["beta_contacts"],
     y,
-    s=26,
-    color=COLOR_LIGHT,
-    edgecolor=COLOR_EDGE,
+    s=48,
+    color=COLOR,
+    edgecolor="white",
     linewidth=0.8,
     zorder=3,
     label="distinct partners held fixed"
@@ -144,9 +115,7 @@ style(ax)
 save(fig, "fig_breadth_check")
 
 
-# -----------------------------------
 # A3: coefficient against AME for the top ten
-# -----------------------------------
 
 ame = pd.read_csv(AME)
 

@@ -24,7 +24,7 @@ os.environ["NUMBA_THREADING_LAYER"] = "workqueue"
 # Import the shared paths from this project's experiments directory.
 EXPERIMENTS_DIR = next(p for p in Path(__file__).resolve().parents if p.name == "experiments")
 sys.path.insert(0, str(EXPERIMENTS_DIR / "code"))
-from experiment_paths import ROOT, ORIGINAL_SEARCH, M, A1, A2, A3, output_path
+from experiment_paths import ORIGINAL_SEARCH, M, A3, output_path
 sys.path.insert(0, str(M / "code" / "added"))
 
 import numpy as np

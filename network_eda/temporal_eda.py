@@ -3,15 +3,12 @@ import pandas as pd
 
 from temporal_analyzer import TemporalAnalyzer
 from temporal_dataset_analyzer import TemporalDatasetAnalyzer
-from temporal_plots import TemporalPlots
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "reply_networks"
 
 
-# -----------------------------------
 # Analyze every subreddit separately
-# -----------------------------------
 
 results = []
 
@@ -31,9 +28,7 @@ comparison_df = pd.DataFrame(results)
 #print("Number of subreddits:", len(comparison_df))
 
 
-# -----------------------------------
 # Dataset-level analysis
-# -----------------------------------
 
 dataset_analyzer = TemporalDatasetAnalyzer(
     comparison_df
@@ -56,9 +51,7 @@ print("\nSummary statistics:")
 print(summary_stats)
 
 
-# -----------------------------------
 # Filter by subreddit size
-# -----------------------------------
 
 filtered_1000 = (
     dataset_analyzer
@@ -81,9 +74,7 @@ print(
 )
 
 
-# -----------------------------------
 # Highest / lowest return
-# -----------------------------------
 
 print("\nLowest next-month return (>= 1000 users):")
 print(
@@ -103,9 +94,7 @@ print(
 )
 
 
-# -----------------------------------
 # Save results
-# -----------------------------------
 
 comparison_df.to_csv(
     "temporal_eda_summary_all_subreddits.csv",

@@ -105,9 +105,7 @@ results = pd.read_csv(RESULTS)
 top = results.nlargest(TOP_K, "quality")
 
 
-# -----------------------------------
 # Reference model and top-k subgroups, distinct contacts held fixed
-# -----------------------------------
 
 rows = [{
     "description": "all observations",
