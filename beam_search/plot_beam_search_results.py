@@ -76,7 +76,7 @@ ax.scatter(
 )
 
 ax.set_yticks(list(y))
-ax.set_yticklabels([f"{rank}  {readable(d)}" for rank, d in enumerate(top["description"], start=1)])
+ax.set_yticklabels([readable(d) for d in top["description"]])
 
 # subgroup size next to each row
 ax_n = ax.secondary_yaxis("right")

@@ -52,8 +52,7 @@ plt.rcParams.update({
 breadth = pd.read_csv(BREADTH)
 
 labels = ["all observations"] + [
-    f"{rank}  {readable(d)}"
-    for rank, d in enumerate(breadth["description"].iloc[1:], start=1)
+    readable(d) for d in breadth["description"].iloc[1:]
 ]
 
 # all observations at the top, then quality rank 1 to 10
